@@ -1,18 +1,27 @@
 #pragma once
 
-#include <iostream>
+#include "ScrewExtend_API.h"
 
 #include "spdlog/spdlog.h"
 
-#include "ScrewExtend.h"
-
 namespace ScrewExtend
 {
-	class ScrewExtend_API ScrewLog
+	class ScrewExtend_API Log
 	{
 	public:
-		ScrewLog();
-		~ScrewLog();
+		Log();
+		~Log();
+
+	public:
+		static void Init();
+
+		inline static std::shared_ptr<spdlog::logger>& GetTerminalLogger() ;
+		inline static std::shared_ptr<spdlog::logger>& GetClientLogger();
+
+	private:
+		static std::shared_ptr<spdlog::logger> s_TerminalLogger;
+		static std::shared_ptr<spdlog::logger> s_ClientLogger;
+
 	};
 
 	void ScrewExtend_API Print();

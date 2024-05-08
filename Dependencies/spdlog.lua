@@ -47,7 +47,6 @@ project "spdlog"
 	-- }
 
     filter "system:windows" 
-        staticruntime "On"
         systemversion "latest"
         defines { "_WINDOWS" }
 
