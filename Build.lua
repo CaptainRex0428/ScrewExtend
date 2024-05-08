@@ -15,6 +15,7 @@ workspace "ScrewExtend"
 	
 group "Lib"
 	include "libScrewExtend.lua"
+	include "ScrewExtend.lua"
 
 group "Sandbox"
 	include "ScrewSandbox/ScrewSandbox.lua"

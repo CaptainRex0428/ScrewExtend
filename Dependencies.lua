@@ -7,6 +7,7 @@ DepIncludeDir["spdlog"] = "%{wks.location}/Dependencies/spdlog/include"
 ProjIncludeDir={}
 
 ProjIncludeDir["libScrewExtend"] = "%{wks.location}/include"
+ProjIncludeDir["ScrewExtend"] = "%{wks.location}/include"
 
 --Compiled
 LibraryDir = {}

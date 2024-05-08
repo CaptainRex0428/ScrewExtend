@@ -1,25 +1,28 @@
-project "spdlog"
-    kind "StaticLib"
+project "ScrewExtend"
+    kind "SharedLib"
     language "C++"
     cppdialect "C++20"
 
     files
     {
-        "spdlog/src/**.cpp"
+        "src/**.cpp",
+        "include/**.h"
     }
 
     includedirs
     {
-        "spdlog/include"
+        "include",
+        "%{DepIncludeDir.spdlog}"
     }
 
     links
     {
+        "spdlog"
     }
 
     defines
 	{
-        "SPDLOG_COMPILED_LIB"
+        "SCREW_EXTEND_BUILD_DLL_EXPORT"
 	}
 
     flags
@@ -41,13 +44,13 @@ project "spdlog"
     -- inlining    "Explicit"
 	-- intrinsics  "Off"
 
-    -- postbuildcommands
-	-- {
-		-- ("{COPY} %{cfg.buildtarget.relpath} "..DynamicDir)
-	-- }
+    postbuildcommands
+	{
+		("{COPY} %{cfg.buildtarget.relpath} "..DynamicDir)
+	}
 
     filter "system:windows" 
-        staticruntime "On"
+        staticruntime "Off"
         systemversion "latest"
         defines { "_WINDOWS" }
 

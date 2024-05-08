@@ -11,12 +11,14 @@ project "ScrewSandbox"
     includedirs
     {
         "include",
-        "%{ProjIncludeDir.libScrewExtend}"
+        "%{ProjIncludeDir.ScrewExtend}",
+        "%{DepIncludeDir.spdlog}"
     }
 
     links
     {
-        "libScrewExtend"
+        "ScrewExtend",
+        "spdlog"
     }
 
     defines

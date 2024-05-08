@@ -17,11 +17,12 @@ project "libScrewExtend"
 
     links
     {
-        "spdlog.dll"
+        "spdlog"
     }
 
     defines
 	{
+        "SCREW_EXTEND_BUILD_LIB"
 	}
 
     flags
