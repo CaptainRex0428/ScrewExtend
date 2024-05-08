@@ -14,7 +14,6 @@ workspace "ScrewExtend"
     buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
 	
 group "Lib"
-	include "libScrewExtend.lua"
 	include "ScrewExtend.lua"
 
 group "Sandbox"
