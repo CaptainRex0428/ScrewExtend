@@ -18,3 +18,6 @@ group "Lib"
 
 group "Sandbox"
 	include "ScrewSandbox/ScrewSandbox.lua"
+
+group "Dependencies"
+	include "Dependencies/spdlog.lua"
