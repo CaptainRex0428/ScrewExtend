@@ -22,6 +22,7 @@ project "ScrewExtend"
 
     defines
 	{
+        "_CRT_SECURE_NO_WARNINGS",
         "SCREW_EXTEND_BUILD_DLL_EXPORT"
 	}
 
