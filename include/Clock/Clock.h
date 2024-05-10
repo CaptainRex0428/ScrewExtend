@@ -19,24 +19,22 @@ namespace ScrewExtend {
 	public:
 		Clock(Clock&) = delete;
 
-		/*static const char* generate_systime_format_now(const char* format = "%Y%m%d%H%M%S", int maxLength = 20);
-		static const char* convert_systime_String(std::chrono::high_resolution_clock::time_point timeSource = std::chrono::high_resolution_clock::now());
-		static long long int convert_systime_format_longlong(std::chrono::high_resolution_clock::time_point timeSource = std::chrono::high_resolution_clock::now(), ClockUnit unit = micro);
-		static long long int convert_filetime_format_longlong(const FILETIME* filetime);*/
+		static inline tm* GetCurrentTime_sys();
+		static inline tm* GetCurrentTime_sys(long long& timeRecord);
+		static inline tm* GetCurrentTime_sys(char* timeRecord,bool isFull = false);
 
-	//private:
+		static inline tm* GetCurrentTime_gm();
+		static inline tm* GetCurrentTime_gm(long long& timeRecord);
+		static inline tm* GetCurrentTime_gm(char* timeRecord, bool isFull = false);
 
+		static inline std::chrono::steady_clock::time_point GetCurrentTime_HighRes();
+		
+	private:
 		Clock() = default;
 		~Clock() = default;
 
 		static Clock& Get();
 
-		inline time_t GetCurrentTime_time_t();
-		inline tm* GetCurrentTime_tm_local();
-		inline tm* GetCurrentTime_tm_gm();
-		inline std::chrono::steady_clock::time_point GetCurrentTime_HighRes();
-
-		// const char* I_generate_systime_format_now(const char* format, int maxLength);
-		/*const char* I_convert_systime_format_longlong(std::chrono::high_resolution_clock::time_point timeSource);*/
+		static inline time_t GetCurrentTime_time_t();
 	};
 }

@@ -19,14 +19,48 @@ namespace ScrewExtend {
 		return CHRONO_SYSTEM_CLOCK::to_time_t(CHRONO_SYSTEM_CLOCK::now());
 	}
 
-	tm* Clock::GetCurrentTime_tm_local() {
+	tm* Clock::GetCurrentTime_sys() {
 		auto time = GetCurrentTime_time_t();
 		return localtime(&time);
 	}
 
-	tm* Clock::GetCurrentTime_tm_gm() {
+	tm* Clock::GetCurrentTime_sys(long long& timeRecord)
+	{
+		timeRecord = CHRONO_HIGHRES_CLOCK::now().time_since_epoch().count();
+		return GetCurrentTime_sys();
+	}
+
+	tm* Clock::GetCurrentTime_sys(char* timeRecord, bool isFull)
+	{
+		time_t timeT = GetCurrentTime_time_t();
+		tm* time = localtime(&timeT);
+		strftime(timeRecord, 
+				MAX_TIME_STRING_SIZE, 
+				isFull ? TIME_STRING_PATTERN_FULL:TIME_STRING_PATTERN_CORE,
+				time);
+		return time;
+	}
+
+	tm* Clock::GetCurrentTime_gm() {
 		auto time = GetCurrentTime_time_t();
 		return gmtime(&time);
+	}
+
+	tm* Clock::GetCurrentTime_gm(long long& timeRecord)
+	{
+		timeRecord = CHRONO_HIGHRES_CLOCK::now().time_since_epoch().count();
+		return GetCurrentTime_gm();
+	}
+
+	tm* Clock::GetCurrentTime_gm(char* timeRecord, bool isFull)
+	{
+		time_t timeT = GetCurrentTime_time_t();
+		tm* time = gmtime(&timeT);
+		strftime(timeRecord, 
+				MAX_TIME_STRING_SIZE, 
+				isFull ? TIME_STRING_PATTERN_FULL : TIME_STRING_PATTERN_CORE,
+				time);
+		return time;
 	}
 
 	std::chrono::steady_clock::time_point Clock::GetCurrentTime_HighRes()
@@ -36,7 +70,7 @@ namespace ScrewExtend {
 
 	//const char* Clock::I_generate_systime_format_now(const char* format, int maxLength) {
 	//	char* timestring = new char[maxLength];
-	//	strftime(timestring, maxLength, format, GetCurrentTime_tm_local());
+	//	strftime(timestring, maxLength, format, GetCurrentTime_sys());
 
 	//	return timestring;
 	//}
@@ -70,7 +104,7 @@ namespace ScrewExtend {
 	//}
 	//const char* Clock::I_generate_systime_format_now(const char* format, int maxLength) {
 	//	char* timestring = new char[maxLength];
-	//	strftime(timestring, maxLength, format, GetCurrentTime_tm_local());
+	//	strftime(timestring, maxLength, format, GetCurrentTime_sys());
 
 	//	return timestring;
 	//}
