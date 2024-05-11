@@ -4,6 +4,7 @@
 
 #include "Clock/Clock.h"
 #include "Clock/Clock_Define.h"
+#include "Clock/Clock_Config.h"
 
 #include <windows.h>
 #include <minwindef.h>

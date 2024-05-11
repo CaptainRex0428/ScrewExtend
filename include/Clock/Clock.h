@@ -7,12 +7,6 @@
 
 namespace ScrewExtend {
 
-	enum ScrewExtend_API ClockUnit
-	{
-		micro = 0,
-		milli = 1
-	};
-
 	// Clock is singleton
 	class ScrewExtend_API Clock {
 
