@@ -1,4 +1,5 @@
 #pragma once
 
-#define CONTACT(x,y) x##y
-#define ENGINE_MICRO_CONTACT(x,y) CONTACT(x,y)
+#pragma warning(disable:5103)
+#define _SCREW_EXTEND_MICRO_CONTACT(x,y) x##y
+#define SCREW_EXTEND_MICRO_CONTACT(x,y) _SCREW_EXTEND_MICRO_CONTACT(x,y)
