@@ -42,8 +42,8 @@ project "ScrewExtend"
     targetdir (TargetDir)
     objdir (ObjectDir)
 
-    -- inlining    "Explicit"
-	-- intrinsics  "Off"
+    inlining    "Explicit"
+	intrinsics  "Off"
 
     postbuildcommands
 	{
