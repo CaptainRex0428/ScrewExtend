@@ -4,6 +4,7 @@
 #include "Message/Message.h"
 #include "Clock/Clock.h"
 #include "File/File.h"
+#include "Directory/Directory.h"
 //---------------------------------------------
 
 //----------------- Micro Define --------------
@@ -11,6 +12,6 @@
 #include "Message/Message_Micro.h"
 #include "Clock/Clock_Micro.h"
 #include "File/File_Micro.h"
+#include "Directory/Directory_Micro.h"
 #include "Math/Math_Micro.h"
-
 //---------------------------------------------

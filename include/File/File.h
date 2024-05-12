@@ -27,6 +27,7 @@ namespace ScrewExtend
 		ScrewExtend_API static std::vector<std::string>& GetContent(const char* filepath);
 
 		ScrewExtend_API static bool isFilePathValid(const char* filepath,const char* _functionName, bool isError = true);
+		ScrewExtend_API static bool isFilePathValid(const char* filepath, bool isError = true);
 
 		ScrewExtend_API static bool Create(const char* filepath, bool force = false);
 

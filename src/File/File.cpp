@@ -2,6 +2,8 @@
 #include "Message/Message.h"
 #include "File/File_Config.h"
 
+#include "Directory/Directory.h"
+
 #include "Math/Unit.h"
 
 #include <iostream>
@@ -180,16 +182,22 @@ namespace ScrewExtend {
 		{
 			if (force)
 			{
+				Directory::Create(GetFileDirectoyFromPath(filepath).c_str(), true);
+				filestream.open(filepath, std::ios::out | std::ios::trunc);
 			}
 			else 
 			{
 			#ifdef _DEBUG
 				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_FOLDER_PATH_NOT_EXIST_ERROR, GetFileDirectoyFromPath(filepath), SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-				Message::GetTerminalMessager()->error("Make parameter input <force> as <true> may solve this error.");
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE);
 			#endif
 				return false;
 			}
 		}
+
+	#ifdef _DEBUG
+		Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CREATED_TIP, filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+	#endif
 
 		filestream.flush();
 		filestream.close();
@@ -263,6 +271,11 @@ namespace ScrewExtend {
 		}
 
 		return true;
+	}
+
+	ScrewExtend_API bool File::isFilePathValid(const char* filepath, bool isError)
+	{
+		return isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT, isError);
 	}
 
 	bool File::isMessageValid(const char* message,const char * _functionName)

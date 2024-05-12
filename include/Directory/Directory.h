@@ -16,6 +16,7 @@ namespace ScrewExtend
 	public:
 
 		ScrewExtend_API static bool isDirectoryPathValid(const char* directoryPath, const char* _functionName, bool isError = true);
+		ScrewExtend_API static bool isDirectoryPathValid(const char* directoryPath, bool isError = true);
 		
 		ScrewExtend_API static bool Create(const char* directoryPath,bool force = false);
 

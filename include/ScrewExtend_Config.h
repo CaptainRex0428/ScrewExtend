@@ -9,3 +9,7 @@
 #else
 #define SCREW_EXTEND_DEBUG_FUNCTION_TYPE __FUNCTION__
 #endif
+
+#define SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT "-NoFuntionRecord-"
+
+#define SCREW_EXTEND_TIP_FUNCTION_FORCE "Make parameter input <force> as <true> may solve this error."
