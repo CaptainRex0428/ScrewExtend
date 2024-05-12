@@ -10,8 +10,6 @@
 
 namespace ScrewExtend
 {
-	std::shared_ptr<spdlog::logger> Message::m_TerminalMessager;
-	std::shared_ptr<spdlog::logger> Message::m_ClientMessager;
 
 	Message::Message()
 	{
@@ -23,31 +21,35 @@ namespace ScrewExtend
 
 	void Message::Init()
 	{
-		spdlog::set_pattern(ENGINE_MICRO_CONTACT(ENGINE_MICRO_CONTACT(SCREW_MESSAGE_PATTERN_HEADER, TIME_STRING_PATTERN_CORE), SCREW_MESSAGE_PATTERN_INFO));
+		spdlog::set_pattern(SCREW_EXTEND_MICRO_CONTACT(SCREW_EXTEND_MICRO_CONTACT(SCREW_EXTEND_MESSAGE_PATTERN_HEADER, SCREW_EXTEND_TIME_STRING_PATTERN_CORE), SCREW_EXTEND_MESSAGE_PATTERN_INFO));
 
 		m_TerminalMessager = spdlog::stderr_color_mt("Terminal");
 		m_TerminalMessager->set_level(spdlog::level::trace);
 
+		#ifdef _DEBUG
 		if (m_TerminalMessager)
 		{
 			m_TerminalMessager->trace("Screw Message[Terminal] Initialized.");
 		}
+		#endif
 
 		m_ClientMessager = spdlog::stderr_color_mt("Client");
 		m_ClientMessager->set_level(spdlog::level::trace);
 
+		#ifdef _DEBUG
 		if (m_ClientMessager)
 		{
 			m_ClientMessager->trace("Screw Message[Client] Initialized.");
 		}
+		#endif
 	}
 
-	inline std::shared_ptr<spdlog::logger>& Message::GetTerminalMessager()
+	std::shared_ptr<spdlog::logger>& Message::GetTerminalMessager()
 	{
 		return m_TerminalMessager; 
 	}
 
-	inline std::shared_ptr<spdlog::logger>& Message::GetClientMessager()
+	std::shared_ptr<spdlog::logger>& Message::GetClientMessager()
 	{
 		return m_ClientMessager; 
 	}

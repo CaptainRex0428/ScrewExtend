@@ -6,20 +6,20 @@
 
 namespace ScrewExtend
 {
-	class ScrewExtend_API Message
+	class Message
 	{
 	public:
-		Message();
-		~Message();
+		ScrewExtend_API Message();
+		ScrewExtend_API virtual ~Message();
 
 	public:
-		static void Init();
+		ScrewExtend_API static void Init();
 
-		inline static std::shared_ptr<spdlog::logger>& GetTerminalMessager() ;
-		inline static std::shared_ptr<spdlog::logger>& GetClientMessager();
+		ScrewExtend_API static std::shared_ptr<spdlog::logger>& GetTerminalMessager() ;
+		ScrewExtend_API static std::shared_ptr<spdlog::logger>& GetClientMessager();
 
 	private:
-		static std::shared_ptr<spdlog::logger> m_TerminalMessager;
-		static std::shared_ptr<spdlog::logger> m_ClientMessager;
+		inline static std::shared_ptr<spdlog::logger> m_TerminalMessager;
+		inline static std::shared_ptr<spdlog::logger> m_ClientMessager;
 	};
 }
