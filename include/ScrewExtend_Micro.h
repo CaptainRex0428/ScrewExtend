@@ -5,3 +5,4 @@
 #define SCREW_EXTEND_MICRO_CONTACT(x,y) _SCREW_EXTEND_MICRO_CONTACT(x,y)
 
 #define SCREW_EXTEND_VNAME(value) (#value)
+#define SCREW_EXTEND_CNAME(value) (#value)

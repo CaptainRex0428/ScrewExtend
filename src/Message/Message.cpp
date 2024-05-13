@@ -13,10 +13,12 @@ namespace ScrewExtend
 
 	Message::Message()
 	{
+		std::cout << "M Cons" << std::endl;
 	};
 
 	Message::~Message()
 	{
+		std::cout << "M Dest" << std::endl;
 	}
 
 	void Message::Init()
