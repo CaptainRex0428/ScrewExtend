@@ -1,8 +1,8 @@
 #include "File/File.h"
 #include "Message/Message.h"
 #include "File/File_Config.h"
-
 #include "Directory/Directory.h"
+#include "ScrewExtend_Micro.h" 
 
 #include "Math/Unit.h"
 
@@ -112,6 +112,10 @@ namespace ScrewExtend {
 			return;
 		};
 
+	#ifdef _DEBUG
+		Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CLEAR_TIP, filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+	#endif
+
 		std::fstream filestream(filepath, std::ios::out | std::ios::trunc);
 		filestream.flush();
 		filestream.close();
@@ -138,7 +142,7 @@ namespace ScrewExtend {
 
 		Message::GetTerminalMessager()->trace(SCREW_EXTEND_SLASH_TILTE_PATTERN, SCREW_EXTEND_SLASH,name,OutSize, Unit);
 
-		for (auto line : *fileContent)
+		for (std::string line : *fileContent)
 		{
 			Message::GetTerminalMessager()->trace(line);
 		}
@@ -189,7 +193,7 @@ namespace ScrewExtend {
 			{
 			#ifdef _DEBUG
 				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_FOLDER_PATH_NOT_EXIST_ERROR, GetFileDirectoyFromPath(filepath), SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE);
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE,SCREW_EXTEND_VNAME(force), "true");
 			#endif
 				return false;
 			}

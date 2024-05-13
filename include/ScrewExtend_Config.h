@@ -12,4 +12,5 @@
 
 #define SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT "-NoFuntionRecord-"
 
-#define SCREW_EXTEND_TIP_FUNCTION_FORCE "Make parameter input <force> as <true> may solve this error."
+#define SCREW_EXTEND_TIP_FUNCTION_FORCE "Make parameter input <{0}> as <{1}> may help."
+#define SCREW_EXTEND_TIP_VARIABLE_RESET "Variable <{0}> has been reset."

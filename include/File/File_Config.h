@@ -8,6 +8,8 @@
 #define SCREW_EXTEND_FILE_FOLDER_PATH_NOT_EXIST_ERROR "File parent directory (\"{0}\") doesn't exist.[{1}]"
 
 #define SCREW_EXTEND_FILE_CREATED_TIP "Created file (\"{0}\").[{1}]"
+
+#define SCREW_EXTEND_FILE_CLEAR_TIP "File (\"{0}\") has been reset.[{1}]"
 #endif // _DEBUG
 
 #define SCREW_EXTEND_FILE_GET_NAME_WITH_SUBFIX

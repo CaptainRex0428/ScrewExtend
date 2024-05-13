@@ -20,15 +20,17 @@ namespace ScrewExtend
 		
 		ScrewExtend_API static bool Create(const char* directoryPath,bool force = false);
 
-		ScrewExtend_API static std::tuple<bool, struct stat> GetDirectoryInfo(const char* directoryPath);
+		ScrewExtend_API static int Walk(const char* directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion = false);
+		ScrewExtend_API static int Walk(const char* directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion = false);
+
+		ScrewExtend_API static std::tuple<bool, struct stat> GetDirectoryInfo(const char* directoryPath);   
 		ScrewExtend_API static std::string GetParentDirectoryFromPath(const char * directoryPath);
-		ScrewExtend_API static std::vector<std::string> GetChildDirectoryPath(const char * directoryPath);
-		ScrewExtend_API static std::vector<std::string> GetChildFilePath(const char * directoryPath);
-		//ScrewExtend_API static inline std::vector<std::string> WalkChildDirectory(const char * directoryPath);
-		//ScrewExtend_API static inline std::vector<std::string> WalkChildFile(const char * directoryPath);
+
 
 	private:
 		ScrewExtend_API static Directory& Get();
+
+		ScrewExtend_API static struct stat GetDirectoryStat(const char* directoryPath);
 
 	// class is singleton 
 	public:
@@ -37,8 +39,6 @@ namespace ScrewExtend
 	private:
 		ScrewExtend_API Directory();
 		ScrewExtend_API virtual ~Directory();
-
-	private:
 
 	};
 }

@@ -23,4 +23,20 @@ int main(int argc, char * argv[])
 	ScrewExtend::File::AppendContent("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890","./test.log");
 	ScrewExtend::File::AppendContent("This is a test content created by sandbox.","./test.log");
 	ScrewExtend::File::PrintContent("./test.log");
+
+	std::vector<std::string> list;
+	std::vector<std::string> folder;
+	ScrewExtend::Directory::Walk("./log",true, list,folder,1);
+
+	for (std::string a : list)
+	{
+		std::cout << a << std::endl;
+	}
+
+	std::cout << "------------------------------" << std::endl;
+
+	for (std::string a : folder)
+	{
+		std::cout << a << std::endl;
+	}
 }
