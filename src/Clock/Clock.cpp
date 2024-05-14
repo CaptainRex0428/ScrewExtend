@@ -13,13 +13,6 @@
 
 namespace ScrewExtend {
 
-	// For static variables in Clock init
-
-	bool Clock::m_initialized = false;
-	tm* Clock::m_sysStartTime = new tm();
-	char* Clock::m_sysStartTime_CHAR = new char();
-	CHRONO_STEADY_CLOCK::time_point* Clock::m_sysStartTime_HIGHRES = new CHRONO_STEADY_CLOCK::time_point();
-
 	// Definitions
 
 	Clock::Clock()
@@ -39,11 +32,6 @@ namespace ScrewExtend {
 		return CHRONO_SYSTEM_CLOCK::to_time_t(CHRONO_SYSTEM_CLOCK::now());
 	}
 
-	ScrewExtend_API void Clock::TipUninitialized()
-	{
-		Message::GetTerminalMessager()->error(SCREW_EXTEND_CLOCK_UNINITIALIZED, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-	}
-
 	const tm* Clock::GetCurrentTime_sys() {
 		auto time = GetCurrentTime_time_t();
 		return localtime(&time);
@@ -57,17 +45,23 @@ namespace ScrewExtend {
 
 	const tm* Clock::GetCurrentTime_sys(char* timeRecord, bool isFull)
 	{
-		if(timeRecord == nullptr)
-		{
-			timeRecord = new char();
-		}
-
 		time_t timeT = GetCurrentTime_time_t();
 		tm* time = localtime(&timeT);
 		strftime(timeRecord, 
 				SCREW_EXTEND_MAX_TIME_STRING_SIZE, 
 				isFull ? SCREW_EXTEND_TIME_STRING_PATTERN_FULL: SCREW_EXTEND_TIME_STRING_PATTERN_CORE,
 				time);
+		return time;
+	}
+
+	ScrewExtend_API const tm* Clock::GetCurrentTime_sys_simple(char* timeRecord)
+	{
+		time_t timeT = GetCurrentTime_time_t();
+		tm* time = localtime(&timeT);
+		strftime(timeRecord,
+			SCREW_EXTEND_MAX_TIME_STRING_SIZE,
+			SCREW_EXTEND_TIME_STRING_PATTERN_FILE,
+			time);
 		return time;
 	}
 
@@ -84,11 +78,6 @@ namespace ScrewExtend {
 
 	const tm* Clock::GetCurrentTime_gm(char* timeRecord, bool isFull)
 	{
-		if (timeRecord == nullptr)
-		{
-			timeRecord = new char();
-		}
-
 		time_t timeT = GetCurrentTime_time_t();
 		tm* time = gmtime(&timeT);
 		strftime(timeRecord, 
@@ -101,18 +90,6 @@ namespace ScrewExtend {
 	const std::chrono::steady_clock::time_point Clock::GetCurrentTime_HighRes()
 	{
 		return CHRONO_HIGHRES_CLOCK::now();
-	}
-
-	void Clock::Init()
-	{
-		if (m_initialized)
-		{
-			return;
-		}
-
-		m_initialized = true;
-		*m_sysStartTime = *GetCurrentTime_sys(m_sysStartTime_CHAR);
-		*m_sysStartTime_HIGHRES = GetCurrentTime_HighRes();
 	}
 	
 }

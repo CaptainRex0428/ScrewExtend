@@ -20,9 +20,9 @@ namespace ScrewExtend
 	};
 
 	// transfer Byte size to specific unit output in double
-	double ScrewExtend_API ByteSizeTo(int bytesize, SystemSizeUnit unit);
+	ScrewExtend_API double ByteSizeTo(int bytesize, SystemSizeUnit unit);
 
 	// transfer Byte size to a proper unit output in double
-	std::tuple<const char*, double> ScrewExtend_API ByteSizeConvert(int bytesize);
+	ScrewExtend_API std::tuple<const char*, double> ByteSizeConvert(int bytesize);
 
 }

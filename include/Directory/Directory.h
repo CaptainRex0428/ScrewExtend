@@ -24,7 +24,7 @@ namespace ScrewExtend
 		ScrewExtend_API static int Walk(const char* directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion = false);
 
 		ScrewExtend_API static std::tuple<bool, struct stat> GetDirectoryInfo(const char* directoryPath);   
-		ScrewExtend_API static std::string GetParentDirectoryFromPath(const char * directoryPath);
+		ScrewExtend_API static std::string GetParentPath(const char * directoryPath);
 
 
 	private:

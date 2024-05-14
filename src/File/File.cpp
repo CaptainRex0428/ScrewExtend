@@ -1,243 +1,35 @@
 #include "File/File.h"
-#include "Message/Message.h"
 #include "File/File_Config.h"
-#include "Directory/Directory.h"
-#include "ScrewExtend_Micro.h" 
 
 #include "Math/Unit.h"
+#include "ScrewExtend_Micro.h" 
+#include "ScrewExtend_Config.h"
 
+#include "Message/Message.h"
+#include "Directory/Directory.h"
+
+#include <Windows.h>
 #include <iostream>
 #include <algorithm>
 
-#include <fstream>
 #include <filesystem>
+#include <format>
 
 namespace ScrewExtend {
 
-	File::File(const char * filepath)
-	{
-		m_filepath = std::make_shared<char>(*filepath);
-		m_fileInfo = GetFileInfo(filepath);
-	}
-
-	File::~File()
-	{
-
-	}
-
-	bool File::AppendContent(const char* message, const char* filepath)
-	{
-		if(!isMessageValid(message, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return false;
-		}
-
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return false;
-		};
-
-		std::fstream filestream(filepath, std::ios::out | std::ios::app);
-		
-		filestream << message << std::endl;
-
-		filestream.flush();
-		filestream.close();
-
-		return true;
-	}
-
-	bool File::ReplaceContent(const char* message_src, const char* message_rpc, const char* filepath)
-	{
-		std::vector<std::string> Content = GetContent(filepath);
-
-		if (Content.size() == 0)
-		{
-			return false;
-		}
-
-		ClearContent(filepath);
-		
-		bool replaced = false;
-
-		for (auto& line : Content)
-		{
-			while (true)
-			{
-				auto exists = line.find(message_src);
-
-				if (exists != std::string::npos)
-				{
-					line.replace(exists, std::strlen(message_src), message_rpc);
-					replaced = true;
-				}
-				else
-				{
-					break;
-				}
-			}
-
-			AppendContent(line.c_str(), filepath);
-		}
-
-		return replaced;
-	}
-
-	bool File::UpdateContent(const char* message, const char* filepath)
-	{
-		if (!isMessageValid(message, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return false;
-		}
-
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return false;
-		};
-
-		std::fstream filestream(filepath, std::ios::out | std::ios::trunc);
-
-		filestream << message << std::endl;
-
-		filestream.flush();
-		filestream.close();
-
-		return true;
-	}
-
-	void File::ClearContent(const char* filepath)
-	{
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return;
-		};
-
-	#ifdef _DEBUG
-		Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CLEAR_TIP, filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-	#endif
-
-		std::fstream filestream(filepath, std::ios::out | std::ios::trunc);
-		filestream.flush();
-		filestream.close();
-	}
-
-	void File::PrintContent(const char* filepath)
-	{
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return;
-		};
-
-		std::fstream filestream(filepath, std::ios::in);
-		std::vector<std::string>* fileContent = new std::vector<std::string>();
-		std::string line;
-
-		while (getline(filestream, line))
-		{
-			fileContent->push_back(line);
-		}
-		
-		auto [Unit,OutSize] = ByteSizeConvert(GetFileStat(filepath).st_size);
-		std::string name = GetFileNameFromPath(filepath);
-
-		Message::GetTerminalMessager()->trace(SCREW_EXTEND_SLASH_TILTE_PATTERN, SCREW_EXTEND_SLASH,name,OutSize, Unit);
-
-		for (std::string line : *fileContent)
-		{
-			Message::GetTerminalMessager()->trace(line);
-		}
-
-		Message::GetTerminalMessager()->trace(SCREW_EXTEND_SLASH_FOOTER_PATTERN, SCREW_EXTEND_SLASH, name, OutSize, Unit);
-	}
-
-	std::vector<std::string>& File::GetContent(const char* filepath)
-	{
-		std::fstream filestream(filepath, std::ios::in);
-		std::vector<std::string>* fileContent = new std::vector<std::string>();
-
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return *fileContent;
-		};
-
-		std::string line;
-
-		while (getline(filestream, line))
-		{
-			fileContent->push_back(line);
-		}
-
-		return *fileContent;
-	}
-
-	bool File::Create(const char* filepath, bool force)
-	{
-		if (isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE, 0))
-		{
-		#ifdef _DEBUG
-			Message::GetTerminalMessager()->warn(SCREW_EXTEND_FILE_PATH_EXIST_ERROR, filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-		#endif
-			return false;
-		}
-
-		std::fstream filestream(filepath, std::ios::out | std::ios::trunc);
-		
-		if(!filestream.is_open())
-		{
-			if (force)
-			{
-				Directory::Create(GetFileDirectoyFromPath(filepath).c_str(), true);
-				filestream.open(filepath, std::ios::out | std::ios::trunc);
-			}
-			else 
-			{
-			#ifdef _DEBUG
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_FOLDER_PATH_NOT_EXIST_ERROR, GetFileDirectoyFromPath(filepath), SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE,SCREW_EXTEND_VNAME(force), "true");
-			#endif
-				return false;
-			}
-		}
-
-	#ifdef _DEBUG
-		Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CREATED_TIP, filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
-	#endif
-
-		filestream.flush();
-		filestream.close();
-
-		return true;
-	}
-
-	std::tuple< bool, struct stat > File::GetFileInfo(const char* filepath)
-	{
-		if (!isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
-		{
-			return {false,struct stat()};
-		};
-
-		return {true,GetFileStat(filepath)};
-	}
-
-	inline std::string File::GetFileNameFromPath(const char* filepath)
+	std::string File::GetFileNameFromPath(const char* filepath)
 	{
 		std::filesystem::path fs_path(filepath);
 
 		std::string filename = fs_path.filename().string();
-		std::string filename_nosub = filename + "." + fs_path.extension().string();
-		
-	#ifdef SCREW_EXTEND_FILE_GET_NAME_WITH_SUBFIX
-		return filename;
-	#else
-		std::string filename_nosub = filename.substr(0, filename.rfind("."));
-		return filename_nosub;
-	#endif
-	}
+		std::string filename_nosub = fs_path.stem().string();
 
-	std::string File::GetFileDirectoyFromPath(const char* filepath)
-	{
-		std::filesystem::path fs_path(filepath);
-		return fs_path.parent_path().string();
+		#ifdef SCREW_EXTEND_FILE_GET_NAME_SUBFIX
+			return filename;
+		#else
+			return filename_nosub;
+		#endif
+		
 	}
 
 	struct stat File::GetFileStat(const char* filepath)
@@ -256,11 +48,11 @@ namespace ScrewExtend {
 		#ifdef _DEBUG
 			if(isError)
 			{
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_PATH_NOT_EXIST_ERROR, filepath, _functionName);
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_PATH_NEXIST_ERROR, filepath, _functionName);
 			}
 			else
 			{
-				Message::GetTerminalMessager()->warn(SCREW_EXTEND_FILE_PATH_NOT_EXIST_ERROR, filepath, _functionName);
+				Message::GetTerminalMessager()->warn(SCREW_EXTEND_FILE_PATH_NEXIST_ERROR, filepath, _functionName);
 			}
 		#endif
 			return false;
@@ -269,7 +61,7 @@ namespace ScrewExtend {
 		if (!(statbuf.st_mode & S_IFREG))
 		{
 		#ifdef _DEBUG
-			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_PATH_NOT_FILE_ERROR, filepath, _functionName);
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_PATH_NFILE_ERROR, filepath, _functionName);
 		#endif
 			return false;
 		}
@@ -277,14 +69,27 @@ namespace ScrewExtend {
 		return true;
 	}
 
-	ScrewExtend_API bool File::isFilePathValid(const char* filepath, bool isError)
+	bool File::isFilePathValid(const FstreamSession* filesession, const char* _functionName, bool isError)
+	{
+		if (filesession == nullptr)
+		{
+			#ifdef _DEBUG
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_OBJ_NINIT_ERROR, m_fstreamSession->SessionName, _functionName);
+			#endif
+			return false;
+		}
+
+		return isFilePathValid(filesession->SessionName.c_str(),_functionName,isError);
+	}
+
+	bool File::isFilePathValid(const char* filepath, bool isError)
 	{
 		return isFilePathValid(filepath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT, isError);
 	}
 
-	bool File::isMessageValid(const char* message,const char * _functionName)
+	bool File::isContentValid(const char* Content,const char * _functionName)
 	{
-		if (*message == 0LL)
+		if (*Content == 0LL)
 		{
 		#ifdef _DEBUG
 			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_MESSAGE_EMPTY_ERROR, _functionName);
@@ -296,38 +101,228 @@ namespace ScrewExtend {
 		return true;
 	}
 
+	bool File::isContentValid(const char* content)
+	{
+		return isContentValid(content, SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT);
+	}
+
+	File::File()
+		: m_fstreamSession(nullptr), m_fstream(std::fstream()), m_fileInfo(struct stat())
+	{
+	}
+
+	File::File(const char* filepath)
+		:m_fstream(std::fstream()), m_fileInfo(struct stat())
+	{
+		m_fstreamSession = new FstreamSession({ filepath });
+	}
+
+	File::~File()
+	{
+		if (m_fstream.is_open() || m_fstreamSession != nullptr)
+		{
+			Close();
+		}
+	}
+
+	struct stat File::GetFileStat()
+	{
+		return m_fileInfo;
+	}
+
+	int File::Open(bool force)
+	{
+		if (!isFilePathValid(m_fstreamSession, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__,!force))
+		{
+			std::string fileFolder = Directory::GetParentPath(m_fstreamSession->SessionName.c_str());
+			
+			if(Directory::isDirectoryPathValid(fileFolder.c_str(),false))
+			{
+				if(force)
+				{
+					Directory::Create(fileFolder.c_str(), true);
+				}
+			}
+
+			m_fstream.open(m_fstreamSession->SessionName, SCREW_EXTEND_FILE_DEFAULT_MODE);
+			
+			if (m_fstream.is_open())
+			{
+				m_fileInfo = GetFileStat(m_fstreamSession->SessionName.c_str());
+			
+			#ifdef _DEBUG
+				Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CREATED_TIP, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+			#endif
+				// m_fstream.flush();
+
+				SCREW_EXTEND_FILECREATE_DELAY;
+				return 0;
+			}
+
+			#ifdef _DEBUG
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_FOLDER_PATH_NEXIST_ERROR, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE, SCREW_EXTEND_VNAME(force), "true");
+			#endif
+
+			delete m_fstreamSession;
+			m_fstreamSession = nullptr;
+			return -1;
+		}
+		else
+		{
+			// path valid
+			m_fstream.open(m_fstreamSession->SessionName, SCREW_EXTEND_FILE_DEFAULT_MODE);
+
+			if (m_fstream.is_open())
+			{
+				m_fileInfo = GetFileStat(m_fstreamSession->SessionName.c_str());
+				m_fstream.flush();
+
+				SCREW_EXTEND_FILECREATE_DELAY;
+				return 0;
+			}
+			delete m_fstreamSession;
+			m_fstreamSession = nullptr;
+			return -1;
+		}
+	}
+
+	int File::Open(const char* filepath, bool force)
+	{
+		if(*filepath != 0LL)
+		{
+			m_fstreamSession = new FstreamSession({ filepath });
+
+			return Open(force);
+		}
+
+		return -1;
+	}
+
+	int File::Close()
+	{
+		if (m_fstream.is_open() || m_fstreamSession != nullptr) 
+		{
+			m_fstream.clear();
+			m_fstream.flush();
+			m_fstream.close();
+
+			delete m_fstreamSession;
+			m_fstreamSession = nullptr;
+
+			return 1;
+		}
+
+		return 0;
+	}
+	
 	bool File::AppendContent(const char* message)
 	{
-		return AppendContent(message, m_filepath.get());
-		auto [valid, m_fileInfo] = GetFileInfo(m_filepath.get());
-	}
+		if (!isContentValid(message))
+		{
+		#ifdef _DEBUG
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_MESSAGE_EMPTY_ERROR, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+		#endif
+			return false;
+		}
 
-	bool File::ReplaceContent(const char* message_src, const char* message_rpc)
-	{
-		return ReplaceContent(message_src, message_rpc,m_filepath.get());
-		auto [valid, m_fileInfo] = GetFileInfo(m_filepath.get());
-	}
+		if(m_fstream.is_open())
+		{
+			m_fstream << message << std::endl;
 
-	bool File::UpdateContent(const char* message)
-	{
-		return UpdateContent(message, m_filepath.get());
-		auto [valid, m_fileInfo] = GetFileInfo(m_filepath.get());
+			m_fstream.flush();
+			return true;
+		}
+
+	#ifdef _DEBUG
+		Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_OBJ_NINIT_ERROR, m_fstreamSession->SessionName,SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+	#endif
+
+		return false;
 	}
 
 	void File::ClearContent()
 	{
-		ClearContent(m_filepath.get());
-		auto [valid, m_fileInfo] = GetFileInfo(m_filepath.get());
-	}
+		if(!m_fstream.is_open())
+		{
+		#ifdef _DEBUG
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_OBJ_NINIT_ERROR, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+		#endif
+			return;
+		}
 
-	void File::PrintContent()
-	{
-		PrintContent(m_filepath.get());
+		
+		m_fstream.flush();
+		m_fstream.close();
+
+		m_fstream.clear();
+		
+
+		m_fstream.open(m_fstreamSession->SessionName, SCREW_EXTEND_FILE_CLEAR_MODE);
+
+		m_fstream.flush();
+		m_fstream.close();
+
+		m_fstream.clear();
+
+		// update info
+		m_fstream.open(m_fstreamSession->SessionName, SCREW_EXTEND_FILE_DEFAULT_MODE);
+
+		m_fstream.flush();
+
+		m_fileInfo = GetFileStat(m_fstreamSession->SessionName.c_str());
+
+	#ifdef _DEBUG
+		Message::GetTerminalMessager()->debug(SCREW_EXTEND_FILE_CLEAR_TIP, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+	#endif
 	}
 
 	std::vector<std::string>& File::GetContent()
 	{
-		return GetContent(m_filepath.get());
+		std::vector<std::string>* list = new std::vector<std::string>();
+
+		if (!m_fstream.is_open())
+		{
+		#ifdef _DEBUG
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_OBJ_NINIT_ERROR, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+		#endif
+			return *list;
+		}
+
+		std::fstream fsm(m_fstreamSession->SessionName, SCREW_EXTEND_FILE_GET_MODE);
+		
+		std::string line;
+
+		while(getline(fsm,line))
+		{
+			list->push_back(line);
+		}
+
+		return *list;
 	}
 
+	void File::PrintContent()
+	{
+		if (!m_fstream.is_open())
+		{
+		#ifdef _DEBUG
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_FILE_OBJ_NINIT_ERROR, m_fstreamSession->SessionName, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
+		#endif
+			return;
+		}
+
+		std::vector<std::string> list = GetContent();
+
+		auto filename = GetFileNameFromPath(m_fstreamSession->SessionName.c_str());
+		auto [s_u,s_size] =  ByteSizeConvert(m_fileInfo.st_size);
+
+		Message::GetTerminalMessager()->trace(std::format(SCREW_EXTEND_SLASH_TILTE_PATTERN, SCREW_EXTEND_SLASH,filename,s_size,s_u));
+
+		for (auto line : list)
+		{
+			Message::GetTerminalMessager()->trace(line);
+		}
+
+		Message::GetTerminalMessager()->trace(std::format(SCREW_EXTEND_SLASH_FOOTER_PATTERN, SCREW_EXTEND_SLASH,filename,s_size,s_u));
+	}
 }

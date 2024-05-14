@@ -2,12 +2,12 @@
 
 #include <math.h>
 
-double ScrewExtend_API ScrewExtend::ByteSizeTo(int bytesize, SystemSizeUnit unit)
+double ScrewExtend::ByteSizeTo(int bytesize, SystemSizeUnit unit)
 {
 	return bytesize / pow(1024, unit);
 }
 
-std::tuple<const char*, double> ScrewExtend_API ScrewExtend::ByteSizeConvert(int bytesize)
+std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(int bytesize)
 {
 	double size = bytesize;
 	const char* unit = "Byte";

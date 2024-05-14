@@ -1,59 +1,91 @@
-#include "ScrewExtend.h"
+#include "Sandbox.h"
 
 #include <Windows.h>
 
-int main(int argc, char * argv[])
+namespace ScrewSandbox
 {
-	ScrewExtend::Clock::Init();
-	ScrewExtend::Message::Init();
+	Sandbox::Sandbox()
+		:m_isRunning(false)
+	{}
 
-	SCREW_EXTEND_FILE_CREATE("./log/test.log",1);
-	SCREW_EXTEND_FILE_CLEAR("./log/test.log");
-	SCREW_EXTEND_FILE_APPEND("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", "./log/test.log");
-	SCREW_EXTEND_FILE_APPEND("This is a test content created by sandbox.","./log/test.log");
-	SCREW_EXTEND_FILE_PRINT("./log/test.log");
+	Sandbox::~Sandbox()
+	{}
 
-	SCREW_EXTEND_FILE_CREATE("./log/test/test.log", 1);
-	SCREW_EXTEND_FILE_CLEAR("./log/test/test.log");
-	SCREW_EXTEND_FILE_APPEND("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", "./log/test/test.log");
-	SCREW_EXTEND_FILE_APPEND("This is a test content created by sandbox.", "./log/test/test.log");
-	SCREW_EXTEND_FILE_PRINT("./log/test/test.log");
-
-	SCREW_EXTEND_FILE_CREATE("./test.log");
-	SCREW_EXTEND_FILE_CLEAR("./test.log");
-	SCREW_EXTEND_FILE_APPEND("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890","./test.log");
-	SCREW_EXTEND_FILE_APPEND("This is a test content created by sandbox.","./test.log");
-	SCREW_EXTEND_FILE_PRINT("./test.log");
-
-	std::vector<std::string> list;
-	std::vector<std::string> folder;
-	SCREW_EXTEND_DIRECTORY_WALK("./log",true, list,folder,1);
-
-	for (std::string a : list)
+	Sandbox& Sandbox::Get()
 	{
-		std::cout << a << std::endl;
+		static Sandbox instance;
+		return instance;
 	}
 
-	std::cout << "------------------------------" << std::endl;
-
-	for (std::string a : folder)
+	int Sandbox::Init()
 	{
-		std::cout << a << std::endl;
+		ScrewExtend::Message::Init();
+		auto result = ScrewExtend::GlobalClock::Init();
+
+
+
+		ScrewExtend::Trace::Start();
+
+		Get().m_isRunning = true;
+
+		return result;
 	}
 
-	std::cin.get();
+	void Sandbox::RunLoop()
+	{
+		double loopFrame = 0;
 
-	SCREW_EXTEND_CLOCK_RECORDER_START_CHAR(origin_c);
-	SCREW_EXTEND_CLOCK_RECORDER_START_LONG(origin_d);
-	std::cout << origin_c << std::endl;
-	std::cout << origin_d << std::endl;
+		while (Get().m_isRunning)
+		{
+			SCREW_EXTEND_TIMER_TRACE_STORE(loopFrame);
+			Sleep(1);
 
-	SCREW_EXTEND_CLOCK_ASSIGN_RECORDER_CHAR(time_c);
-	SCREW_EXTEND_CLOCK_ASSIGN_RECORDER_LONG(time_d);
-	ScrewExtend::Clock::GetCurrentTime_sys(time_c);
-	ScrewExtend::Clock::GetCurrentTime_sys(time_d);
-	std::cout << time_c << std::endl;
-	std::cout << time_d << std::endl;
+			std::cout << loopFrame << "ms" << std::endl;
 
-	std::cin.get();
+			if (Get().PullEvents() != 0 || Get().Update() != 0)
+			{
+				return;
+			};
+			
+			Get().Output();
+		}
+	}
+
+	void Sandbox::ShutDown()
+	{
+		if (Get().m_isRunning)
+		{
+			Get().m_isRunning = false;
+		}
+
+		ScrewExtend::Trace::Stop();
+	}
+
+	int Sandbox::PullEvents()
+	{
+		SCREW_EXTEND_TIMER_TRACE_NSTORE();
+
+		Sleep(300);
+
+		return 0;
+	}
+
+	int Sandbox::Update()
+	{
+		SCREW_EXTEND_TIMER_TRACE_NSTORE();
+
+		Sleep(300);
+
+		return 0;
+	}
+
+	int Sandbox::Output()
+	{
+		SCREW_EXTEND_TIMER_TRACE_NSTORE();
+
+		Sleep(300);
+
+		return 0;
+	}
+
 }

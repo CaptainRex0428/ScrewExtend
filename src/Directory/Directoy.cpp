@@ -36,10 +36,10 @@ namespace ScrewExtend
 		// check the path look like
 		std::filesystem::path targetPath(directoryPath);
 
-		if (strcmp(targetPath.extension().string().c_str(),"")!=0)
+		if (targetPath.extension().string().c_str()==0LL || targetPath.has_extension())
 		{
 		#ifdef _DEBUG
-			Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PATH_NOT_DIRECTORY_LIKE_ERROR, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+			Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PATH_NOT_DIRECTORY_LIKE_ERROR, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
 		#endif
 			return false;
 		};
@@ -81,10 +81,10 @@ namespace ScrewExtend
 
 	ScrewExtend_API bool Directory::Create(const char* directoryPath, bool force)
 	{
-		if (isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE, 0))
+		if (isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__, 0))
 		{
 		#ifdef _DEBUG
-			Message::GetTerminalMessager()->warn(SCREW_EXTEND_DIRECTORY_PATH_EXIST_ERROR, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+			Message::GetTerminalMessager()->warn(SCREW_EXTEND_DIRECTORY_PATH_EXIST_ERROR, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
 		#endif
 			return false;
 		}
@@ -118,7 +118,7 @@ namespace ScrewExtend
 			else
 			{
 			#ifdef _DEBUG
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PARENT_PATH_NOT_EXIST_ERROR, GetParentDirectoryFromPath(directoryPath), SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+				Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PARENT_PATH_NOT_EXIST_ERROR, GetParentPath(directoryPath), SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
 				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE,SCREW_EXTEND_VNAME(force),"true");
 			#endif
 				return false;
@@ -126,7 +126,7 @@ namespace ScrewExtend
 		}
 
 	#ifdef _DEBUG
-		Message::GetTerminalMessager()->debug(SCREW_EXTEND_DIRECTORY_CREATED_TIP, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE);
+		Message::GetTerminalMessager()->debug(SCREW_EXTEND_DIRECTORY_CREATED_TIP, directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__);
 	#endif
 
 		return true;
@@ -134,7 +134,7 @@ namespace ScrewExtend
 
 	ScrewExtend_API int Directory::Walk(const char* directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
 	{
-		if (!isDirectoryPathValid(directoryPath))
+		if (!isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__))
 		{
 			return -1;
 		}
@@ -175,13 +175,22 @@ namespace ScrewExtend
 	{
 		if (clear)
 		{
-			files.clear();
-			folders.clear();
+			if (!files.empty()) 
+			{
+				files.clear();
+			#ifdef _DEBUG
+				Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET, SCREW_EXTEND_VNAME(files));
+			#endif
+			};
 
-		#ifdef _DEBUG
-			Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET,SCREW_EXTEND_VNAME(files));
-			Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET,SCREW_EXTEND_VNAME(folders));
-		#endif
+			if (!folders.empty()) 
+			{
+
+				folders.clear();
+			#ifdef _DEBUG
+				Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET, SCREW_EXTEND_VNAME(folders));
+			#endif
+			};
 		}
 
 		return Walk(directoryPath, files, folders, recursion);
@@ -189,7 +198,7 @@ namespace ScrewExtend
 
 	ScrewExtend_API std::tuple<bool, struct stat> Directory::GetDirectoryInfo(const char* directoryPath)
 	{
-		if (!isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE))
+		if (!isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_DETAIL ? __FUNCSIG__ : __FUNCTION__))
 		{
 			return { false, struct stat()};
 		}
@@ -197,7 +206,7 @@ namespace ScrewExtend
 		return {true,GetDirectoryStat(directoryPath)};
 	}
 
-	ScrewExtend_API std::string Directory::GetParentDirectoryFromPath(const char* directoryPath)
+	ScrewExtend_API std::string Directory::GetParentPath(const char* directoryPath)
 	{
 		std::filesystem::path dict_path(directoryPath);
 		return dict_path.parent_path().string();

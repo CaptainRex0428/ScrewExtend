@@ -1,22 +1,25 @@
 #pragma once
 
 #include "ScrewExtend_API.h"
+#include "Clock/Clock.h"
 
 namespace ScrewExtend
 {
-	class Timer
+	class Timer : virtual public Clock
 	{
 	public:
-		Timer(const char * tag);
-		virtual ~Timer();
+		ScrewExtend_API Timer(const char * _tag, const char * _obj, bool _traced, double & _ms);
+		ScrewExtend_API virtual ~Timer();
 
-	protected:
 	private:
 	
 	// var
 	protected:
-
-	private:
-
+		const char* m_tag;
+		const char* m_obj;
+		bool m_traced;
+		double* m_ms;
+		CHRONO_HIGHRES_CLOCK::time_point m_ConstructedTime;
+		CHRONO_HIGHRES_CLOCK::time_point m_DestructedTime;
 	};
 }

@@ -28,13 +28,13 @@ project "ScrewExtend"
 
     flags
     {
-        -- "NoRuntimeChecks", -- Only used on Visual Studio.
+        -- "NoRuntimeChecks",
 		-- "NoBufferSecurityCheck"
     }
 
     -- vectorextensions  "SSE"               -- Necessary to run x32.
 
-    buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
+    -- buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
 
     -- warnings "off"
 
@@ -42,8 +42,8 @@ project "ScrewExtend"
     targetdir (TargetDir)
     objdir (ObjectDir)
 
-    inlining    "Explicit"
-	intrinsics  "Off"
+    -- inlining    "Explicit"
+	-- intrinsics  "Off"
 
     postbuildcommands
 	{
