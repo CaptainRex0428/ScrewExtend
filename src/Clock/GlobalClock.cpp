@@ -2,25 +2,25 @@
 
 namespace ScrewExtend{
 	GlobalClock::GlobalClock()
-		:m_initialized(false),
-		m_processStartTime(new tm()),
-		m_processStartTime_CHAR(new char()),
-		m_processStartTime_HIGHRES(new CHRONO_HIGHRES_CLOCK::time_point())
+		:m_initialized(false),m_processStartTime(nullptr),m_processStartTime_HIGHRES(nullptr)
 	{
-
 	}
 
 	GlobalClock::~GlobalClock()
 	{
-		delete m_processStartTime, m_processStartTime_CHAR, m_processStartTime_HIGHRES;
+		delete m_processStartTime;
+		m_processStartTime = nullptr;
+
+		delete m_processStartTime_HIGHRES;
+		m_processStartTime_HIGHRES = nullptr;
 	}
 
 	int GlobalClock::Initialize()
 	{
 		if(!m_initialized)
 		{
-			*m_processStartTime = *GetCurrentTime_sys(m_processStartTime_CHAR);
-			*m_processStartTime_HIGHRES = GetCurrentTime_HighRes();
+			m_processStartTime_HIGHRES = new CHRONO_HIGHRES_CLOCK::time_point(GetCurrentTime_HighRes());
+			m_processStartTime = new tm(*GetCurrentTime_sys());
 			m_initialized = true;
 		}
 		
@@ -41,11 +41,6 @@ namespace ScrewExtend{
 	const tm* GlobalClock::GetProcessStartTime()
 	{
 		return Get().m_processStartTime;
-	}
-	
-	const char* GlobalClock::GetProcessStartTime_CHAR()
-	{
-		return Get().m_processStartTime_CHAR;
 	}
 	
 	const CHRONO_HIGHRES_CLOCK::time_point* GlobalClock::GetProcessStartTime_HIGHRES()

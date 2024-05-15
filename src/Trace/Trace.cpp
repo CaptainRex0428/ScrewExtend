@@ -2,6 +2,7 @@
 #include "Trace/Trace_Config.h"
 
 #include "File/File.h"
+#include "Clock/Clock_Config.h"
 
 #include "Message/Message.h"
 #include "Message/Message_Micro.h"
@@ -37,13 +38,18 @@ namespace ScrewExtend
 	{
 		if (!m_isRecording)
 		{
-			char* filename = new char();
-			Clock::GetCurrentTime_sys_simple(filename);
+			auto _time = Clock::GetCurrentTime_sys();
+			size_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());
 
-			long long highres = 0;
-			Clock::GetCurrentTime_sys(highres);
+			std::string filename = std::format("{0}{1}{2}{3}{4}-{5}", 
+												_time->tm_year,
+												_time->tm_mon,
+												_time->tm_hour,
+												_time->tm_min,
+												_time->tm_sec,
+												threadID);
 
-			std::string _path = std::format("{0}/{1}-{2}.json", SE_TRACE_FOLDER, filename, highres);
+			std::string _path = std::format("{0}/{1}.json", SE_TRACE_FOLDER, filename);
 			
 			m_traceFile = new File(_path);
 

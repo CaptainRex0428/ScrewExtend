@@ -5,9 +5,8 @@ namespace ScrewExtend
 	int Init()
 	{
 		ScrewExtend::Message::Init();
+		ScrewExtend::GlobalClock::Init();
 
-		auto result = ScrewExtend::GlobalClock::Init();
-
-		return result;
+		return 1;
 	}
 }

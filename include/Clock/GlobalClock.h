@@ -13,7 +13,6 @@ namespace ScrewExtend
 		SE_API static int Init();
 
 		SE_API static const tm * GetProcessStartTime();
-		SE_API static const char * GetProcessStartTime_CHAR();
 		SE_API static const CHRONO_HIGHRES_CLOCK::time_point * GetProcessStartTime_HIGHRES();
 
 	protected:
@@ -29,7 +28,6 @@ namespace ScrewExtend
 		bool m_initialized;
 
 		tm* m_processStartTime;
-		char* m_processStartTime_CHAR;
 		CHRONO_HIGHRES_CLOCK::time_point* m_processStartTime_HIGHRES;
 
 	};

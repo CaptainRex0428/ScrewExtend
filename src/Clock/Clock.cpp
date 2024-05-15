@@ -37,54 +37,9 @@ namespace ScrewExtend {
 		return localtime(&time);
 	}
 
-	const tm* Clock::GetCurrentTime_sys(long long& timeRecord)
-	{
-		timeRecord = CHRONO_HIGHRES_CLOCK::now().time_since_epoch().count();
-		return GetCurrentTime_sys();
-	}
-
-	const tm* Clock::GetCurrentTime_sys(char* timeRecord, bool isFull)
-	{
-		time_t timeT = GetCurrentTime_time_t();
-		tm* time = localtime(&timeT);
-		strftime(timeRecord, 
-				SE_MAX_TIME_STRING_SIZE, 
-				isFull ? SE_TIME_STRING_PATTERN_FULL: SE_TIME_STRING_PATTERN_CORE,
-				time);
-		return time;
-	}
-
-	SE_API const tm* Clock::GetCurrentTime_sys_simple(char* timeRecord)
-	{
-		time_t timeT = GetCurrentTime_time_t();
-		tm* time = localtime(&timeT);
-		strftime(timeRecord,
-			SE_MAX_TIME_STRING_SIZE,
-			SE_TIME_STRING_PATTERN_FILE,
-			time);
-		return time;
-	}
-
 	const tm* Clock::GetCurrentTime_gm() {
 		auto time = GetCurrentTime_time_t();
 		return gmtime(&time);
-	}
-
-	const tm* Clock::GetCurrentTime_gm(long long& timeRecord)
-	{
-		timeRecord = CHRONO_HIGHRES_CLOCK::now().time_since_epoch().count();
-		return GetCurrentTime_gm();
-	}
-
-	const tm* Clock::GetCurrentTime_gm(char* timeRecord, bool isFull)
-	{
-		time_t timeT = GetCurrentTime_time_t();
-		tm* time = gmtime(&timeT);
-		strftime(timeRecord, 
-			SE_MAX_TIME_STRING_SIZE,
-				isFull ? SE_TIME_STRING_PATTERN_FULL : SE_TIME_STRING_PATTERN_CORE,
-				time);
-		return time;
 	}
 
 	const std::chrono::steady_clock::time_point Clock::GetCurrentTime_HighRes()
