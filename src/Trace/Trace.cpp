@@ -1,7 +1,6 @@
 #include "Trace/Trace.h"
-
 #include "Trace/Trace_Config.h"
-#include "Directory/Directory.h"
+
 #include "File/File.h"
 
 #include "Message/Message.h"
@@ -10,12 +9,8 @@
 #include "Clock/Clock.h"
 
 #include <format>
-#include <filesystem>
-#include <iostream>
-#include <process.h>
-
 #include <thread>
-#include <chrono>
+
 
 namespace ScrewExtend
 {
@@ -48,21 +43,20 @@ namespace ScrewExtend
 			long long highres = 0;
 			Clock::GetCurrentTime_sys(highres);
 
-			std::string _path = std::format("{0}/{1}-{2}.json", SCREW_EXTEND_TRACE_FOLDER, filename, highres);
+			std::string _path = std::format("{0}/{1}-{2}.json", SE_TRACE_FOLDER, filename, highres);
 			
 			m_traceFile = new File(_path);
 
 			if (m_traceFile->Open(true) == 0)
 			{
-				SE_MESSAGE_TERMINAL_DEBUG("Trace Started.");
 				m_isRecording = true;
 
 				WriteHeader();
-				
+
 				return;
 			}
 
-			m_traceFile->Close();
+			m_traceFile->CloseStream();
 			delete m_traceFile;
 			m_traceFile = nullptr;
 		}
@@ -74,7 +68,7 @@ namespace ScrewExtend
 		{
 			WriteFooter();
 
-			m_traceFile->Close();
+			m_traceFile->CloseStream();
 			delete m_traceFile;
 			m_traceFile = nullptr;
 
@@ -110,14 +104,14 @@ namespace ScrewExtend
 	{
 		if (m_isRecording) 
 		{
-			m_traceFile->Write(R"({"otherData": {},"traceEvents":[)");
+			m_traceFile->Write("{\"otherData\": {},\"traceEvents\":[");
 		}
 	}
 
 	void Trace::WriteFooter() {
 		if (m_isRecording) 
 		{
-			m_traceFile->Write(R"(]})");
+			m_traceFile->Write("]}");
 		}
 	}
 

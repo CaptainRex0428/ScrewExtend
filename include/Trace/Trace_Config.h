@@ -1,3 +1,3 @@
 #pragma once
 
-#define SCREW_EXTEND_TRACE_FOLDER "./trace"
+#define SE_TRACE_FOLDER "./trace"

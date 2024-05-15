@@ -1,11 +1,12 @@
 #pragma once
 
-#include "ScrewExtend_API.h"
+#include "SE_API.h"
 
-#include "ScrewExtend_Config.h"
+#include "SE_Config.h"
 
 #include "File/File_Define.h"
 
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -17,37 +18,41 @@ namespace ScrewExtend
 	{
 	// static
 	public:
-		ScrewExtend_API static bool isFilePathValid(std::string filepath);
+		SE_API static bool isFilePathValid(std::string filepath);
 
 	// class
 	public:
-		ScrewExtend_API File();
-		ScrewExtend_API File(std::string filepath);
-		ScrewExtend_API virtual ~File();
+		SE_API File();
+		SE_API File(std::string filepath);
+		SE_API virtual ~File();
 
-		ScrewExtend_API virtual int Open(bool force = false);
-		ScrewExtend_API virtual int Open(std::string filepath, bool force = false);
+		SE_API virtual int Open(bool force = false);
+		SE_API virtual int Open(std::string filepath, bool force = false);
 
-		ScrewExtend_API virtual void Close();
+		SE_API virtual void CloseStream();
+		SE_API virtual void Close();
 		
-		ScrewExtend_API virtual bool Write(std::string Content);
+		SE_API virtual bool Write(std::string Content);
 
-		ScrewExtend_API virtual void Print();
-		ScrewExtend_API virtual void Clear();
+		SE_API virtual void Print();
+		SE_API virtual void Clear();
 
-		ScrewExtend_API std::string GetFullPath();
-		ScrewExtend_API std::vector<std::string> GetContent();
-		ScrewExtend_API uintmax_t GetFileByteSize();
+		SE_API std::string GetFullPath();
+		SE_API std::vector<std::string> GetContent();
+		SE_API uintmax_t GetFileByteSize();
 	protected:
-		ScrewExtend_API virtual int OpenStream();
+		SE_API virtual int OpenWriteStream();
+		SE_API virtual int OpenReadStream();
+		SE_API virtual void CloseWriteStream();
+		SE_API virtual void CloseReadStream();
 	
 	//var
 	protected:
 		bool m_valid;
 		std::string m_filefolder;
 		std::string m_filename;
-		std::ifstream m_ifstream;
-		std::ofstream m_ofstream;
+		std::ifstream * m_ifstream;
+		std::ofstream * m_ofstream;
 	};
 
 }

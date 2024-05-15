@@ -6,7 +6,7 @@
 #include "Clock/Clock_Config.h"
 
 #include "Message/Message.h"
-#include "ScrewExtend_Config.h"
+#include "SE_Config.h"
 
 #include <windows.h>
 #include <minwindef.h>
@@ -48,19 +48,19 @@ namespace ScrewExtend {
 		time_t timeT = GetCurrentTime_time_t();
 		tm* time = localtime(&timeT);
 		strftime(timeRecord, 
-				SCREW_EXTEND_MAX_TIME_STRING_SIZE, 
-				isFull ? SCREW_EXTEND_TIME_STRING_PATTERN_FULL: SCREW_EXTEND_TIME_STRING_PATTERN_CORE,
+				SE_MAX_TIME_STRING_SIZE, 
+				isFull ? SE_TIME_STRING_PATTERN_FULL: SE_TIME_STRING_PATTERN_CORE,
 				time);
 		return time;
 	}
 
-	ScrewExtend_API const tm* Clock::GetCurrentTime_sys_simple(char* timeRecord)
+	SE_API const tm* Clock::GetCurrentTime_sys_simple(char* timeRecord)
 	{
 		time_t timeT = GetCurrentTime_time_t();
 		tm* time = localtime(&timeT);
 		strftime(timeRecord,
-			SCREW_EXTEND_MAX_TIME_STRING_SIZE,
-			SCREW_EXTEND_TIME_STRING_PATTERN_FILE,
+			SE_MAX_TIME_STRING_SIZE,
+			SE_TIME_STRING_PATTERN_FILE,
 			time);
 		return time;
 	}
@@ -81,8 +81,8 @@ namespace ScrewExtend {
 		time_t timeT = GetCurrentTime_time_t();
 		tm* time = gmtime(&timeT);
 		strftime(timeRecord, 
-			SCREW_EXTEND_MAX_TIME_STRING_SIZE,
-				isFull ? SCREW_EXTEND_TIME_STRING_PATTERN_FULL : SCREW_EXTEND_TIME_STRING_PATTERN_CORE,
+			SE_MAX_TIME_STRING_SIZE,
+				isFull ? SE_TIME_STRING_PATTERN_FULL : SE_TIME_STRING_PATTERN_CORE,
 				time);
 		return time;
 	}

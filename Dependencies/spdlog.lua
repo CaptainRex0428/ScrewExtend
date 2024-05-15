@@ -24,22 +24,13 @@ project "spdlog"
 
     flags
     {
-        -- "NoRuntimeChecks", -- Only used on Visual Studio.
+        -- "NoRuntimeChecks",
 		-- "NoBufferSecurityCheck"
     }
-
-    -- vectorextensions  "SSE"               -- Necessary to run x32.
-
-    buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
-
-    -- warnings "off"
 
     location (LocationDir)
     targetdir (TargetDir)
     objdir (ObjectDir)
-
-    -- inlining    "Explicit"
-	-- intrinsics  "Off"
 
     -- postbuildcommands
 	-- {
@@ -57,12 +48,10 @@ project "spdlog"
 
     filter "configurations:Release"
         runtime "Release"
-        optimize "On"
         symbols "On"
-        defines { "_RELEASE","NDEBUG" }
+        defines { "NDEBUG" }
 
     filter "configurations:Dist"
         runtime "Release"
-        optimize "On"
-        symbols "Off"
-        defines { "_DIST","NDEBUG" }
+        symbols "On"
+        defines { "NDEBUG" }

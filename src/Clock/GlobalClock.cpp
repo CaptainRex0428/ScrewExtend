@@ -24,7 +24,7 @@ namespace ScrewExtend{
 			m_initialized = true;
 		}
 		
-		return this->m_initialized;
+		return m_initialized;
 	}
 	
 	GlobalClock& GlobalClock::Get()

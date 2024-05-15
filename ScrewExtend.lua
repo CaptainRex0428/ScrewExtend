@@ -28,7 +28,7 @@ project "ScrewExtend"
 
     flags
     {
-        -- "NoRuntimeChecks",
+        "NoRuntimeChecks",
 		-- "NoBufferSecurityCheck"
     }
 
@@ -42,7 +42,7 @@ project "ScrewExtend"
     targetdir (TargetDir)
     objdir (ObjectDir)
 
-    -- inlining    "Explicit"
+    inlining    "Explicit"
 	-- intrinsics  "Off"
 
     postbuildcommands
@@ -58,16 +58,16 @@ project "ScrewExtend"
     filter "configurations:Debug"
         runtime "Debug"
         symbols "On"
-        defines { "_DEBUG" }
+        defines { "_DEBUG","SPDLOG_ACTIVE_LEVEL=0" }
 
     filter "configurations:Release"
         runtime "Release"
         optimize "On"
         symbols "On"
-        defines { "_RELEASE","NDEBUG" }
+        defines { "_RELEASE","NDEBUG","SPDLOG_ACTIVE_LEVEL=1" }
 
     filter "configurations:Dist"
         runtime "Release"
         optimize "On"
         symbols "Off"
-        defines { "_DIST","NDEBUG" }
+        defines { "_DIST","NDEBUG","SPDLOG_ACTIVE_LEVEL=3" }

@@ -14,7 +14,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to KB
 	double sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return {unit,size};
 	}
@@ -23,7 +23,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to MB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}
@@ -32,7 +32,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to GB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}
@@ -41,7 +41,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to TB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}
@@ -50,7 +50,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to PB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}
@@ -59,7 +59,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to EB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}
@@ -68,7 +68,7 @@ std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 
 	// to ZB
 	sizebuf = size / 1024;
-	if (((uintmax_t)sizebuf) == 0)
+	if (((int)sizebuf) == 0)
 	{
 		return { unit,size };
 	}

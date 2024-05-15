@@ -11,7 +11,7 @@
 //---------------------------------------------
 
 //----------------- Micro Define --------------
-#include "ScrewExtend_Micro.h"
+#include "SE_Micro.h"
 #include "Message/Message_Micro.h"
 #include "Clock/Clock_Micro.h"
 #include "Clock/GlobalClock_Micro.h"
@@ -24,5 +24,5 @@
 
 namespace ScrewExtend
 {
-	ScrewExtend_API int Init();
+	SE_API int Init();
 }

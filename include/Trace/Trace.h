@@ -1,10 +1,12 @@
 #pragma once
 
-#include "ScrewExtend_API.h"
+#include "SE_API.h"
+
 #include "File/File.h"
 
 #include <string>
 #include <fstream>
+#include <iostream>
 
 namespace ScrewExtend
 {
@@ -18,24 +20,24 @@ namespace ScrewExtend
 	class Trace
 	{
 	public:
-		ScrewExtend_API Trace(Trace&) = delete;
+		SE_API Trace(Trace&) = delete;
 
-		ScrewExtend_API static void Start();
-		ScrewExtend_API static void Stop();
-		ScrewExtend_API static void Record(const ProfileResult& result);
+		SE_API static void Start();
+		SE_API static void Stop();
+		SE_API static void Record(const ProfileResult& result);
 
 	private:
 
-		ScrewExtend_API Trace();
-		ScrewExtend_API virtual ~Trace();
+		SE_API Trace();
+		SE_API virtual ~Trace();
 
-		ScrewExtend_API static Trace& Get();
+		SE_API static Trace& Get();
 
-		ScrewExtend_API void BeginSession();
-		ScrewExtend_API void EndSession();
-		ScrewExtend_API void WriteProfile(const ProfileResult& result);
-		ScrewExtend_API void WriteHeader();
-		ScrewExtend_API void WriteFooter();
+		SE_API void BeginSession();
+		SE_API void EndSession();
+		SE_API void WriteProfile(const ProfileResult& result);
+		SE_API void WriteHeader();
+		SE_API void WriteFooter();
 
 	private:
 		File* m_traceFile;

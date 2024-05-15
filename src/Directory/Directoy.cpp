@@ -1,12 +1,12 @@
 #include "Directory/Directory.h"
 #include "Directory/Directory_Config.h"
-#include "ScrewExtend_Config.h"
-#include "ScrewExtend_Micro.h" 
+
+#include "SE_Config.h"
+#include "SE_Micro.h" 
+
 #include "Message/Message.h"
 
-#include <iostream>
 #include <filesystem>
-#include <direct.h>
 
 namespace ScrewExtend
 {
@@ -74,12 +74,12 @@ namespace ScrewExtend
 		return true;
 	}
 
-	ScrewExtend_API bool Directory::isDirectoryPathValid(const char* directoryPath, bool isError)
+	bool Directory::isDirectoryPathValid(const char* directoryPath, bool isError)
 	{
-		return isDirectoryPathValid(directoryPath, SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT, isError);
+		return isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_TYPE_DEFAULT, isError);
 	}
 
-	ScrewExtend_API bool Directory::Create(const char* directoryPath, bool force)
+	bool Directory::Create(const char* directoryPath, bool force)
 	{
 		if (isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__, 0))
 		{
@@ -119,7 +119,7 @@ namespace ScrewExtend
 			{
 			#ifdef _DEBUG
 				Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PARENT_PATH_NOT_EXIST_ERROR, GetParentPath(directoryPath), SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_TIP_FUNCTION_FORCE,SE_VNAME(force),"true");
+				Message::GetTerminalMessager()->error(SE_TIP_FUNCTION_FORCE,SE_VNAME(force),"true");
 			#endif
 				return false;
 			}
@@ -132,7 +132,7 @@ namespace ScrewExtend
 		return true;
 	}
 
-	ScrewExtend_API int Directory::Walk(const char* directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
+	int Directory::Walk(const char* directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
 	{
 		if (!isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__))
 		{
@@ -171,7 +171,7 @@ namespace ScrewExtend
 		return 0;
 	}
 
-	ScrewExtend_API int Directory::Walk(const char* directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
+	int Directory::Walk(const char* directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
 	{
 		if (clear)
 		{
@@ -179,7 +179,7 @@ namespace ScrewExtend
 			{
 				files.clear();
 			#ifdef _DEBUG
-				Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET, SE_VNAME(files));
+				Message::GetTerminalMessager()->debug(SE_TIP_VARIABLE_RESET, SE_VNAME(files));
 			#endif
 			};
 
@@ -188,7 +188,7 @@ namespace ScrewExtend
 
 				folders.clear();
 			#ifdef _DEBUG
-				Message::GetTerminalMessager()->debug(SCREW_EXTEND_TIP_VARIABLE_RESET, SE_VNAME(folders));
+				Message::GetTerminalMessager()->debug(SE_TIP_VARIABLE_RESET, SE_VNAME(folders));
 			#endif
 			};
 		}
@@ -196,7 +196,7 @@ namespace ScrewExtend
 		return Walk(directoryPath, files, folders, recursion);
 	}
 
-	ScrewExtend_API std::tuple<bool, struct stat> Directory::GetDirectoryInfo(const char* directoryPath)
+	std::tuple<bool, struct stat> Directory::GetDirectoryInfo(const char* directoryPath)
 	{
 		if (!isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__))
 		{
@@ -206,7 +206,7 @@ namespace ScrewExtend
 		return {true,GetDirectoryStat(directoryPath)};
 	}
 
-	ScrewExtend_API std::string Directory::GetParentPath(const char* directoryPath)
+	std::string Directory::GetParentPath(const char* directoryPath)
 	{
 		std::filesystem::path dict_path(directoryPath);
 		return dict_path.parent_path().string();

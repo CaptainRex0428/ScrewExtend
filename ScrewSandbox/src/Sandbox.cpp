@@ -1,19 +1,26 @@
 #include "Sandbox.h"
 
 #include <Windows.h>
-#include "ScrewExtend_Micro.h"
+#include "SE_Micro.h"
 
 namespace ScrewSandbox
 {
 	Sandbox::Sandbox()
-		:m_isRunning(false)
+		:m_isRunning(false),m_f(nullptr)
 	{
-		m_f = new ScrewExtend::File("./log/GameRun.log");
-		m_f->Open(true);
 	}
 
 	Sandbox::~Sandbox()
-	{}
+	{
+		if(m_isRunning == true || m_f != nullptr)
+		{
+			m_isRunning = false;
+
+			m_f->Close();
+			delete m_f;
+			m_f = nullptr;
+		}
+	}
 
 	Sandbox& Sandbox::Get()
 	{
@@ -24,25 +31,28 @@ namespace ScrewSandbox
 	int Sandbox::Init()
 	{
 		ScrewExtend::Message::Init();
-		auto result = ScrewExtend::GlobalClock::Init();
+		ScrewExtend::GlobalClock::Init();
 
-		ScrewExtend::Trace::Start();
-
-		Get().m_isRunning = true;
+		Get().m_f = new ScrewExtend::File("./log/GameRun.log");
+		Get().m_f->Open(true);
 		Get().m_f->Write("Game init");
 
-		return result;
+		Get().m_isRunning = true;
+
+		return 1;
 	}
 
 	void Sandbox::RunLoop()
 	{
+		ScrewExtend::Trace::Start();
+
 		double loopFrame = 0;
 
 		while (Get().m_isRunning)
 		{
 			SCREW_EXTEND_TIMER_TRACE_STORE(loopFrame);
 			
-			SE_THREAD_DELAY_MICRO(20);
+			SE_THREAD_DELAY_MICRO(1);
 
 			SE_MESSAGE_TERMINAL_WARN("{:.1f} ms",loopFrame);
 
@@ -91,5 +101,50 @@ namespace ScrewSandbox
 
 		return 0;
 	}
+
+
+	Entity::Entity()
+		:m_fileA(nullptr)
+	{}
+
+	Entity::~Entity()
+	{
+		if (m_fileA != nullptr) 
+		{
+			m_fileA->Close();
+
+			delete m_fileA;
+			m_fileA = nullptr;
+		}
+	}
+
+	Entity& Entity::Get()
+	{
+		static Entity instance;
+		return instance;
+	}
+
+	void Entity::Init(std::string _Path)
+	{
+		Get().m_fileA = new SE_FILE(_Path);
+		Get().m_fileA->Open(true);
+	}
+
+	void Entity::write(std::string message)
+	{
+		if (Get().m_fileA != nullptr) 
+		{
+			Get().m_fileA->Write(message);
+		}
+	}
+
+	void Entity::print()
+	{
+		if (Get().m_fileA != nullptr)
+		{
+			Get().m_fileA->Print();
+		}
+	}
+
 
 }

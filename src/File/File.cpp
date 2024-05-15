@@ -1,19 +1,19 @@
 #include "File/File.h"
 #include "File/File_Config.h"
 
+#include "SE_Micro.h" 
+#include "SE_Config.h"
+
 #include "Math/Unit.h"
-#include "ScrewExtend_Micro.h" 
-#include "ScrewExtend_Config.h"
 
 #include "Message/Message.h"
 #include "Message/Message_Micro.h"
+
 #include "Directory/Directory.h"
 
-#include <iostream>
 #include <filesystem>
 #include <cassert>
 #include <format>
-#include <vector>
 
 namespace ScrewExtend {
 	bool File::isFilePathValid(std::string filepath)
@@ -22,13 +22,19 @@ namespace ScrewExtend {
 		return FS::status(_p).type() == FILESYSTEM_TYPE_FILE;
 	}
 
-	ScrewExtend::File::File()
-		:m_valid(false), m_filefolder(""), m_filename("")
+	File::File()
+		:m_valid(false), 
+		m_filefolder(""), 
+		m_filename(""),
+		m_ofstream(nullptr),
+		m_ifstream(nullptr)
 	{
 	}
 
 	File::File(std::string filepath)
-		:m_valid(false)
+		:m_valid(false), 
+		m_ofstream(nullptr),
+		m_ifstream(nullptr)
 	{
 		if (filepath.empty())
 		{
@@ -47,7 +53,7 @@ namespace ScrewExtend {
 
 	File::~File()
 	{
-		Close();
+		CloseStream();
 	}
 
 	int File::Open(bool force)
@@ -72,7 +78,7 @@ namespace ScrewExtend {
 				#endif
 				}
 
-				if (OpenStream() == -1)
+				if (OpenWriteStream() == -1)
 				{
 				#ifdef _DEBUG
 					SE_MESSAGE_TERMINAL_ERROR(FILE_OPEN_FAILED, GetFullPath(), SE_DEBUG_FUNCTION_DETAIL_OUT);
@@ -93,7 +99,7 @@ namespace ScrewExtend {
 					return -2;
 				}
 
-				if (OpenStream() == -1)
+				if (OpenWriteStream() == -1)
 				{
 				#ifdef _DEBUG
 					SE_MESSAGE_TERMINAL_ERROR(FILE_OPEN_FAILED, GetFullPath(), SE_DEBUG_FUNCTION_DETAIL_OUT);
@@ -122,17 +128,6 @@ namespace ScrewExtend {
 			return -1;
 		}
 
-		if (m_ofstream.is_open())
-		{
-			m_ofstream.flush();
-			m_ofstream.close();
-		}
-
-		if (m_ifstream.is_open())
-		{
-			m_ifstream.close();
-		}
-
 		Close();
 
 		FS::path p(filepath);
@@ -147,43 +142,77 @@ namespace ScrewExtend {
 		return Open(force);
 	}
 
-	int File::OpenStream()
+	int File::OpenWriteStream()
 	{
 		std::string _Path = GetFullPath();
 		
 		// SE_THREAD_DELAY_MICRO(SE_FILECREATE_DELAY_MICRO);
 		// Problem is here
-		m_ofstream.open(_Path.c_str(), std::ios::out | std::ios::app, _SH_DENYNO);
+		m_ofstream = new std::ofstream(_Path.c_str(), std::ios::out | std::ios::app, _SH_DENYNO);
 
-		m_ifstream.open(_Path.c_str(), std::ios::in, _SH_DENYNO);
+		return m_ofstream->is_open() ? 0 : -1;
+	}
 
-		return (m_ofstream.is_open() && m_ifstream.is_open()) ? 0 : -1;
+	int File::OpenReadStream()
+	{
+		std::string _Path = GetFullPath();
+
+		m_ifstream = new std::ifstream(_Path.c_str(), std::ios::in, _SH_DENYNO);
+
+		return m_ifstream->is_open() ? 0 : -1;
+	}
+
+	void File::CloseWriteStream()
+	{
+		if (m_ofstream != nullptr) 
+		{
+			if (m_ofstream->is_open())
+			{
+				m_ofstream->flush();
+				m_ofstream->close();
+			}
+
+			delete m_ofstream;
+			m_ofstream = nullptr;
+		}
+	}
+
+	void File::CloseReadStream()
+	{
+		if (m_ifstream != nullptr) 
+		{
+			if (m_ifstream->is_open())
+			{
+				m_ifstream->close();
+			}
+
+			delete m_ifstream;
+			m_ifstream = nullptr;
+		}
+	}
+
+	void File::CloseStream()
+	{
+		CloseWriteStream();
+		CloseReadStream();
 	}
 
 	void File::Close()
 	{
+		CloseStream();
+
 		m_valid = false;
 
-		if (m_ofstream.is_open())
-		{
-			m_ofstream.flush();
-			m_ofstream.close();
-			m_ofstream.clear();
-		}
-
-		if (m_ifstream.is_open())
-		{
-			m_ifstream.close();
-			m_ifstream.clear();
-		};
+		m_filename = "";
+		m_filefolder = "";
 	}
 
 	bool File::Write(std::string Content)
 	{
-		if (m_valid)
+		if (m_valid && m_ofstream!= nullptr)
 		{
-			m_ofstream << Content << std::endl;
-			m_ofstream.flush();
+			*m_ofstream << Content << std::endl;
+			m_ofstream->flush();
 
 			return true;
 		}
@@ -218,13 +247,9 @@ namespace ScrewExtend {
 			return;
 		}
 
-		if (m_ofstream.is_open())
-		{
-			m_ofstream.flush();
-			m_ofstream.close();
-		}
+		CloseStream();
 
-		m_ofstream.open(GetFullPath(), std::ios::out | std::ios::trunc);
+		m_ofstream = new std::ofstream(GetFullPath(), std::ios::out | std::ios::trunc);
 
 	#ifdef _DEBUG
 		SE_MESSAGE_TERMINAL_TRACE(FILE_CLEAR_TIP,GetFullPath(), SE_DEBUG_FUNCTION_DETAIL_OUT);
@@ -234,33 +259,29 @@ namespace ScrewExtend {
 
 	std::vector<std::string> File::GetContent()
 	{
-		std::vector<std::string> vector;
+		std::vector<std::string> *vector = new std::vector<std::string>();
 
 		if (!m_valid)
 		{
-			return vector;
+			return *vector;
 		}
 
-		if (m_ifstream.is_open())
-		{
-			m_ifstream.close();
-		}
-
-		m_ifstream.open(GetFullPath(), std::ios::in);
+		CloseReadStream();
+		OpenReadStream();
 
 		std::string line;
 		
-		if (m_ifstream.is_open())
+		if (m_ifstream->is_open())
 		{
-			while (getline(m_ifstream, line))
+			while (getline(*m_ifstream, line))
 			{
-				vector.push_back(line);
+				vector->push_back(line);
 			}
 
-			m_ifstream.close();
+			CloseReadStream();
 		}
 
-		return vector;
+		return *vector;
 	}
 
 	uintmax_t File::GetFileByteSize()

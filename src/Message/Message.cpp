@@ -1,6 +1,6 @@
 #include "Message/Message.h"
 
-#include "ScrewExtend_Micro.h"
+#include "SE_Micro.h"
 #include "Message/Message_Config.h"
 #include "Clock/Clock_Config.h"
 
@@ -10,6 +10,8 @@
 
 namespace ScrewExtend
 {
+	/*std::shared_ptr<spdlog::logger> Message::m_TerminalMessager = spdlog::stderr_color_mt("Terminal");
+	std::shared_ptr<spdlog::logger> Message::m_ClientMessager = spdlog::stderr_color_mt("Client");*/
 
 	Message::Message()
 	{
@@ -23,7 +25,7 @@ namespace ScrewExtend
 
 	void Message::Init()
 	{
-		spdlog::set_pattern(SE_MICRO_CONTACT(SE_MICRO_CONTACT(SCREW_EXTEND_MESSAGE_PATTERN_HEADER, SCREW_EXTEND_TIME_STRING_PATTERN_CORE), SCREW_EXTEND_MESSAGE_PATTERN_INFO));
+		spdlog::set_pattern(SE_MICRO_CONTACT(SE_MICRO_CONTACT(SCREW_EXTEND_MESSAGE_PATTERN_HEADER, SE_TIME_STRING_PATTERN_CORE), SCREW_EXTEND_MESSAGE_PATTERN_INFO));
 
 		m_TerminalMessager = spdlog::stderr_color_mt("Terminal");
 		m_TerminalMessager->set_level(spdlog::level::trace);

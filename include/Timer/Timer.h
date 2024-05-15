@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ScrewExtend_API.h"
+#include "SE_API.h"
 #include "Clock/Clock.h"
 
 namespace ScrewExtend
@@ -8,8 +8,8 @@ namespace ScrewExtend
 	class Timer : virtual public Clock
 	{
 	public:
-		ScrewExtend_API Timer(const char * _tag, const char * _obj, bool _traced, double & _ms);
-		ScrewExtend_API virtual ~Timer();
+		SE_API Timer(const char * _tag, const char * _obj, bool _traced, double & _ms);
+		SE_API virtual ~Timer();
 
 	protected:
 		const char* m_tag;

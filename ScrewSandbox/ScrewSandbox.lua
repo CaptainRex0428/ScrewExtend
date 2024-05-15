@@ -27,13 +27,11 @@ project "ScrewSandbox"
 
     flags
     {
-        -- "NoRuntimeChecks", -- Only used on Visual Studio.
-		-- "NoBufferSecurityCheck"
+        "NoRuntimeChecks", -- Only used on Visual Studio.
+		"NoBufferSecurityCheck"
     }
 
-    -- vectorextensions  "SSE"               -- Necessary to run x32.
-
-    buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
+    -- buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
 
     -- warnings "off"
 
@@ -56,12 +54,12 @@ project "ScrewSandbox"
 
     filter "configurations:Release"
         runtime "Release"
-        optimize "On"
+        optimize "Speed"
         symbols "On"
-        defines { "_RELEASE","NDEBUG" }
+        defines { "NDEBUG" }
 
     filter "configurations:Dist"
         runtime "Release"
-        optimize "On"
+        optimize "Full"
         symbols "Off"
-        defines { "_DIST","NDEBUG" }
+        defines { "NDEBUG" }
