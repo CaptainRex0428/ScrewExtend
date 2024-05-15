@@ -44,9 +44,11 @@ namespace ScrewSandbox
 
 	void Sandbox::RunLoop()
 	{
-		ScrewExtend::Trace::Start();
+		// ScrewExtend::Trace::Start();
 
 		double loopFrame = 0;
+
+		int loopTime = 0;
 
 		while (Get().m_isRunning)
 		{
@@ -62,6 +64,13 @@ namespace ScrewSandbox
 			};
 			
 			Get().Output();
+
+			if (loopTime++ > 20)
+			{
+				Get().m_isRunning = false;
+			};
+
+
 		}
 	}
 
@@ -73,6 +82,8 @@ namespace ScrewSandbox
 		}
 
 		ScrewExtend::Trace::Stop();
+
+		std::cin.get();
 	}
 
 	int Sandbox::PullEvents()
@@ -101,50 +112,4 @@ namespace ScrewSandbox
 
 		return 0;
 	}
-
-
-	Entity::Entity()
-		:m_fileA(nullptr)
-	{}
-
-	Entity::~Entity()
-	{
-		if (m_fileA != nullptr) 
-		{
-			m_fileA->Close();
-
-			delete m_fileA;
-			m_fileA = nullptr;
-		}
-	}
-
-	Entity& Entity::Get()
-	{
-		static Entity instance;
-		return instance;
-	}
-
-	void Entity::Init(std::string _Path)
-	{
-		Get().m_fileA = new SE_FILE(_Path);
-		Get().m_fileA->Open(true);
-	}
-
-	void Entity::write(std::string message)
-	{
-		if (Get().m_fileA != nullptr) 
-		{
-			Get().m_fileA->Write(message);
-		}
-	}
-
-	void Entity::print()
-	{
-		if (Get().m_fileA != nullptr)
-		{
-			Get().m_fileA->Print();
-		}
-	}
-
-
 }

@@ -148,7 +148,12 @@ namespace ScrewExtend {
 		
 		// SE_THREAD_DELAY_MICRO(SE_FILECREATE_DELAY_MICRO);
 		// Problem is here
-		m_ofstream = new std::ofstream(_Path.c_str(), std::ios::out | std::ios::app, _SH_DENYNO);
+
+		SE_MESSAGE_TERMINAL_CRITICAL("Start Point.[{}]",__FUNCTION__);
+
+
+		m_ofstream = new std::ofstream(_Path.c_str(), std::ios_base::out | std::ios_base::app, _SH_DENYNO);
+		SE_MESSAGE_TERMINAL_CRITICAL("End StartPoint[{}]", __FUNCTION__);
 
 		return m_ofstream->is_open() ? 0 : -1;
 	}
@@ -157,7 +162,7 @@ namespace ScrewExtend {
 	{
 		std::string _Path = GetFullPath();
 
-		m_ifstream = new std::ifstream(_Path.c_str(), std::ios::in, _SH_DENYNO);
+		m_ifstream = new std::ifstream(_Path.c_str(), std::ios_base::in, _SH_DENYNO);
 
 		return m_ifstream->is_open() ? 0 : -1;
 	}

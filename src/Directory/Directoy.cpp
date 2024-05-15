@@ -1,10 +1,12 @@
 #include "Directory/Directory.h"
 #include "Directory/Directory_Config.h"
+#include "Directory/Directory_Define.h"
 
 #include "SE_Config.h"
 #include "SE_Micro.h" 
 
 #include "Message/Message.h"
+#include "Message/Message_Micro.h"
 
 #include <filesystem>
 
@@ -24,117 +26,39 @@ namespace ScrewExtend
 		return instance;
 	}
 
-	struct stat Directory::GetDirectoryStat(const char* directoryPath)
+	bool Directory::isDirectoryPathValid(std::string directoryPath)
 	{
-		struct stat statbuf;
-		stat(directoryPath, &statbuf);
-		return statbuf;
+		FS::path _p(directoryPath);
+		return FS::status(_p).type() == FILESYSTEM_TYPE_DIRECTORY;
 	}
 
-	bool Directory::isDirectoryPathValid(const char* directoryPath, const char* _functionName, bool isError)
+	bool Directory::Create(std::string directoryPath, bool force)
 	{
-		// check the path look like
-		std::filesystem::path targetPath(directoryPath);
-
-		if (targetPath.extension().string().c_str()==0LL || targetPath.has_extension())
+		if (isDirectoryPathValid(directoryPath))
 		{
 		#ifdef _DEBUG
-			Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PATH_NOT_DIRECTORY_LIKE_ERROR, directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
-		#endif
-			return false;
-		};
-
-		struct stat statbuf;
-
-		//check the path exist
-		if (stat(directoryPath, &statbuf) == -1)
-		{
-		#ifdef _DEBUG
-			if (isError)
-			{
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PATH_NOT_EXIST_ERROR, directoryPath, _functionName);
-			}
-			else
-			{
-				Message::GetTerminalMessager()->warn(SCREW_EXTEND_DIRECTORY_PATH_NOT_EXIST_ERROR, directoryPath, _functionName);
-			}
-		#endif
-			return false;
-		}
-
-		//check the path stat
-		if (!(statbuf.st_mode & S_IFDIR))
-		{
-		#ifdef _DEBUG
-			Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PATH_NOT_DIRECTORY_ERROR, directoryPath, _functionName);
-		#endif
-			return false;
-		}
-
-		return true;
-	}
-
-	bool Directory::isDirectoryPathValid(const char* directoryPath, bool isError)
-	{
-		return isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_TYPE_DEFAULT, isError);
-	}
-
-	bool Directory::Create(const char* directoryPath, bool force)
-	{
-		if (isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__, 0))
-		{
-		#ifdef _DEBUG
-			Message::GetTerminalMessager()->warn(SCREW_EXTEND_DIRECTORY_PATH_EXIST_ERROR, directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
+			SE_MESSAGE_TERMINAL_ERROR(SE_DIRECTORY_PATH_EXIST_ERROR, directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
 		#endif
 			return false;
 		}
 
 		std::filesystem::path targetPath(directoryPath);
 
-		if (_mkdir(directoryPath) == -1)
+		if (force)
 		{
-			if (force)
-			{
-				std::vector<std::string> directorylist;
-				std::filesystem::path BeginPath = targetPath;
-
-				while (true)
-				{
-					directorylist.push_back(BeginPath.string());
-					BeginPath = BeginPath.parent_path();
-
-					if (exists(BeginPath))
-					{
-						break;
-					}
-				}
-
-				for (std::vector<std::string>::iterator it = directorylist.end(); it != directorylist.begin(); it--)
-				{
-					std::string path = *(it - 1);
-					int result = _mkdir(path.c_str());
-				}
-			}
-			else
-			{
-			#ifdef _DEBUG
-				Message::GetTerminalMessager()->error(SCREW_EXTEND_DIRECTORY_PARENT_PATH_NOT_EXIST_ERROR, GetParentPath(directoryPath), SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
-				Message::GetTerminalMessager()->error(SE_TIP_FUNCTION_FORCE,SE_VNAME(force),"true");
-			#endif
-				return false;
-			}
+			FS::create_directories(targetPath);
+			return(isDirectoryPathValid(directoryPath));
 		}
-
-	#ifdef _DEBUG
-		Message::GetTerminalMessager()->debug(SCREW_EXTEND_DIRECTORY_CREATED_TIP, directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__);
-	#endif
-
-		return true;
+		else
+		{
+			FS::create_directory(targetPath);
+			return(isDirectoryPathValid(directoryPath));
+		}
 	}
 
-	int Directory::Walk(const char* directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
+	int Directory::Walk(std::string directoryPath, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
 	{
-		if (!isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__))
+		if (!isDirectoryPathValid(directoryPath))
 		{
 			return -1;
 		}
@@ -171,42 +95,26 @@ namespace ScrewExtend
 		return 0;
 	}
 
-	int Directory::Walk(const char* directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
+	int Directory::Walk(std::string directoryPath, bool clear, std::vector<std::string>& files, std::vector<std::string>& folders, bool recursion)
 	{
 		if (clear)
 		{
 			if (!files.empty()) 
 			{
 				files.clear();
-			#ifdef _DEBUG
-				Message::GetTerminalMessager()->debug(SE_TIP_VARIABLE_RESET, SE_VNAME(files));
-			#endif
 			};
 
 			if (!folders.empty()) 
 			{
 
 				folders.clear();
-			#ifdef _DEBUG
-				Message::GetTerminalMessager()->debug(SE_TIP_VARIABLE_RESET, SE_VNAME(folders));
-			#endif
 			};
 		}
 
 		return Walk(directoryPath, files, folders, recursion);
 	}
 
-	std::tuple<bool, struct stat> Directory::GetDirectoryInfo(const char* directoryPath)
-	{
-		if (!isDirectoryPathValid(directoryPath, SE_DEBUG_FUNCTION_DETAIL_OUT ? __FUNCSIG__ : __FUNCTION__))
-		{
-			return { false, struct stat()};
-		}
-
-		return {true,GetDirectoryStat(directoryPath)};
-	}
-
-	std::string Directory::GetParentPath(const char* directoryPath)
+	std::string Directory::GetParentPath(std::string directoryPath)
 	{
 		std::filesystem::path dict_path(directoryPath);
 		return dict_path.parent_path().string();

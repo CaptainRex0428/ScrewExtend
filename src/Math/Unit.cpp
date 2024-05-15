@@ -4,7 +4,8 @@
 
 double ScrewExtend::ByteSizeTo(int bytesize, SystemSizeUnit unit)
 {
-	return bytesize / pow(1024, unit);
+	// return bytesize / pow(1024, unit);
+	return 100;
 }
 
 std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)

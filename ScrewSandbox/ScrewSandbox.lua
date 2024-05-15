@@ -27,13 +27,9 @@ project "ScrewSandbox"
 
     flags
     {
-        "NoRuntimeChecks", -- Only used on Visual Studio.
+        "NoRuntimeChecks",
 		"NoBufferSecurityCheck"
     }
-
-    -- buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus"}
-
-    -- warnings "off"
 
     location (LocationDir)
     targetdir (EXEDir)
