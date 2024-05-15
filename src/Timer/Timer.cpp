@@ -19,8 +19,10 @@ namespace ScrewExtend {
 	Timer::~Timer()
 	{
 		m_DestructedTime = GetCurrentTime_HighRes();
+
 		CHRONO_HIGHRES_CLOCK::duration _duration= m_DestructedTime - m_ConstructedTime;
 		*m_ms = (_duration.count() / 1000000.0f);
+
 	#ifdef _DEBUG
 		ScrewExtend::Message::GetTerminalMessager()->debug("{0} cost {1:.2f} ms",m_obj,*m_ms);
 	#endif

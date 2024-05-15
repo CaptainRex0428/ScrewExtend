@@ -15,7 +15,7 @@ namespace ScrewExtend
 		size_t ThreadID;
 	};
 
-	class Trace : virtual public File
+	class Trace
 	{
 	public:
 		ScrewExtend_API Trace(Trace&) = delete;
@@ -23,8 +23,6 @@ namespace ScrewExtend
 		ScrewExtend_API static void Start();
 		ScrewExtend_API static void Stop();
 		ScrewExtend_API static void Record(const ProfileResult& result);
-
-		ScrewExtend_API static std::filesystem::path GetTracePathFromTime();
 
 	private:
 
@@ -40,6 +38,8 @@ namespace ScrewExtend
 		ScrewExtend_API void WriteFooter();
 
 	private:
+		File* m_traceFile;
+		bool m_isRecording;
 		int m_ProfileCount;
 	};
 

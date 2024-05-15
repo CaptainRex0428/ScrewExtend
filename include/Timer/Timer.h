@@ -11,9 +11,6 @@ namespace ScrewExtend
 		ScrewExtend_API Timer(const char * _tag, const char * _obj, bool _traced, double & _ms);
 		ScrewExtend_API virtual ~Timer();
 
-	private:
-	
-	// var
 	protected:
 		const char* m_tag;
 		const char* m_obj;

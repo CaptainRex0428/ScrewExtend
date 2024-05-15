@@ -1,12 +1,16 @@
 #include "Sandbox.h"
 
 #include <Windows.h>
+#include "ScrewExtend_Micro.h"
 
 namespace ScrewSandbox
 {
 	Sandbox::Sandbox()
 		:m_isRunning(false)
-	{}
+	{
+		m_f = new ScrewExtend::File("./log/GameRun.log");
+		m_f->Open(true);
+	}
 
 	Sandbox::~Sandbox()
 	{}
@@ -22,11 +26,10 @@ namespace ScrewSandbox
 		ScrewExtend::Message::Init();
 		auto result = ScrewExtend::GlobalClock::Init();
 
-
-
 		ScrewExtend::Trace::Start();
 
 		Get().m_isRunning = true;
+		Get().m_f->Write("Game init");
 
 		return result;
 	}
@@ -38,13 +41,14 @@ namespace ScrewSandbox
 		while (Get().m_isRunning)
 		{
 			SCREW_EXTEND_TIMER_TRACE_STORE(loopFrame);
-			Sleep(1);
+			
+			SE_THREAD_DELAY_MICRO(20);
 
-			std::cout << loopFrame << "ms" << std::endl;
+			SE_MESSAGE_TERMINAL_WARN("{:.1f} ms",loopFrame);
 
 			if (Get().PullEvents() != 0 || Get().Update() != 0)
 			{
-				return;
+				Get().m_isRunning = false;
 			};
 			
 			Get().Output();
@@ -65,7 +69,7 @@ namespace ScrewSandbox
 	{
 		SCREW_EXTEND_TIMER_TRACE_NSTORE();
 
-		Sleep(300);
+		SE_THREAD_DELAY_MICRO(3000);
 
 		return 0;
 	}
@@ -74,7 +78,7 @@ namespace ScrewSandbox
 	{
 		SCREW_EXTEND_TIMER_TRACE_NSTORE();
 
-		Sleep(300);
+		SE_THREAD_DELAY_MICRO(3000);
 
 		return 0;
 	}
@@ -83,7 +87,7 @@ namespace ScrewSandbox
 	{
 		SCREW_EXTEND_TIMER_TRACE_NSTORE();
 
-		Sleep(300);
+		SE_THREAD_DELAY_MICRO(3000);
 
 		return 0;
 	}

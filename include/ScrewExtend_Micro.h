@@ -1,8 +1,10 @@
 #pragma once
 
 #pragma warning(disable:5103)
-#define _SCREW_EXTEND_MICRO_CONTACT(x,y) x##y
-#define SCREW_EXTEND_MICRO_CONTACT(x,y) _SCREW_EXTEND_MICRO_CONTACT(x,y)
+#define _SE_MICRO_CONTACT(x,y) x##y
+#define SE_MICRO_CONTACT(x,y) _SE_MICRO_CONTACT(x,y)
 
-#define SCREW_EXTEND_VNAME(value) (#value)
-#define SCREW_EXTEND_CNAME(value) (#value)
+#define SE_VNAME(value) (#value)
+#define SE_CNAME(value) (#value)
+
+#define SE_THREAD_DELAY_MICRO(value) std::this_thread::sleep_for(std::chrono::microseconds(value))

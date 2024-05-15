@@ -23,6 +23,6 @@ namespace ScrewExtend
 	ScrewExtend_API double ByteSizeTo(int bytesize, SystemSizeUnit unit);
 
 	// transfer Byte size to a proper unit output in double
-	ScrewExtend_API std::tuple<const char*, double> ByteSizeConvert(int bytesize);
+	ScrewExtend_API std::tuple<const char*, double> ByteSizeConvert(uintmax_t bytesize);
 
 }

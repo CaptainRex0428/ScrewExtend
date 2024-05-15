@@ -1,0 +1,4681 @@
+{"otherData": {},"traceEvents":[
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970190
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970206
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970222
+}
+,
+{
+"cat":"function",
+"dur":59,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970179
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970253
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970269
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970285
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970238
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970315
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970331
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970346
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970300
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970377
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970394
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970409
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970362
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970440
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970455
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970471
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970424
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970501
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970517
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970533
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970486
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970564
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970580
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970595
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970549
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970625
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970641
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970657
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970610
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970688
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970704
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970720
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970673
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970752
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970767
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970782
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970736
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970813
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970829
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970844
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970798
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970875
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970891
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970906
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970860
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970938
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970954
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970969
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970922
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971001
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971017
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971032
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25970985
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971062
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971078
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971093
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971048
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971125
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971140
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971155
+}
+,
+{
+"cat":"function",
+"dur":60,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971110
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971186
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971202
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971218
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971171
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971250
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971266
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971281
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971235
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971313
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971328
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971343
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971298
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971374
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971390
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971406
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971359
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971437
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971453
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971468
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971422
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971499
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971515
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971530
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971484
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971561
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971576
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971591
+}
+,
+{
+"cat":"function",
+"dur":60,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971546
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971622
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971638
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971654
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971607
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971685
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971701
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971717
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971670
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971748
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971764
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971779
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971732
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971810
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971826
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971841
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971795
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971872
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971888
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971904
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971857
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971934
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971950
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971966
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971919
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971997
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972013
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972029
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25971982
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972060
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972075
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972091
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972045
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972122
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972139
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972154
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972107
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972185
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972200
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972216
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972170
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972247
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972263
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972278
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972232
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972309
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972324
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972340
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972294
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972371
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972387
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972403
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972356
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972434
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972450
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972465
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972419
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972495
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972511
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972526
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972480
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972557
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972572
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972588
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972541
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972619
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972634
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972649
+}
+,
+{
+"cat":"function",
+"dur":60,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972604
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972680
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972696
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972712
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972665
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972743
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972759
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972774
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972728
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972804
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972820
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972836
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972789
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972867
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972883
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972899
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972852
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972930
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972946
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972961
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972914
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972993
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973008
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973024
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25972978
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973055
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973071
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973087
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973040
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973118
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973133
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973149
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973102
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973180
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973196
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973212
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973165
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973243
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973259
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973274
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973227
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973305
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973320
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973336
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973290
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973367
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973383
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973399
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973352
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973430
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973445
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973461
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973415
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973492
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973508
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973524
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973477
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973554
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973570
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973586
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973539
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973616
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973633
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973648
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973602
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973679
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973695
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973711
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973664
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973741
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973757
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973773
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973726
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973804
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973820
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973836
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973789
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973867
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973883
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973898
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973852
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973928
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973944
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973960
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973914
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973990
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974006
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974021
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25973975
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974052
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974068
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974084
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974037
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974115
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974131
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974146
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974100
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974177
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974193
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974208
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974161
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974240
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974255
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974270
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974224
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974301
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974317
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974332
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974286
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974364
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974380
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974395
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974349
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974426
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974442
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974458
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974411
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974489
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974505
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974520
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974474
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974552
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974567
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974583
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974537
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974613
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974629
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974645
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974598
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974675
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974691
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974707
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974660
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974738
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974754
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974770
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974723
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974802
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974818
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974834
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974786
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974865
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974880
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974896
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974849
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974928
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974943
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974959
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974912
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974990
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975006
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975021
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25974975
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975052
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975068
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975083
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975037
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975114
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975130
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975146
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975099
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975177
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975193
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975209
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975162
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975239
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975255
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975271
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975224
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975301
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975317
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975332
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975286
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975363
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975378
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975393
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975347
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975424
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975440
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975456
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975409
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975486
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975502
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975518
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975471
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975549
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975565
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975580
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975533
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975611
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975628
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975643
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975596
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975673
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975689
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975705
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975658
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975736
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975752
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975767
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975720
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975797
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975813
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975829
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975782
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975860
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975875
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975891
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975845
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975922
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975938
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975953
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975907
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975984
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976000
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976015
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25975969
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976046
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976062
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976077
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976031
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976109
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976125
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976140
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976093
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976171
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976187
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976203
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976156
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976233
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976249
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976264
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976218
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976294
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976310
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976326
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976279
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976357
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976373
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976389
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976342
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976419
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976434
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976450
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976404
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976482
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976497
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976513
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976466
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976544
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976560
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976575
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976529
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976605
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976622
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976638
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976590
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976668
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976684
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976700
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976654
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976731
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976747
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976763
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976715
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976793
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976808
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976824
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976778
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976856
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976872
+}
+,
+{
+"cat":"function",
+"dur":14,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976887
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976840
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976917
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976933
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976949
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976902
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976980
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976996
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977012
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25976965
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977043
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977059
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977074
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977028
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977104
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977120
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977135
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977089
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977166
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977182
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977197
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977151
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977227
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977243
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977259
+}
+,
+{
+"cat":"function",
+"dur":61,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977213
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977290
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977306
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977322
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977275
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977353
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977369
+}
+,
+{
+"cat":"function",
+"dur":16,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977384
+}
+,
+{
+"cat":"function",
+"dur":62,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977338
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::PullEvents(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977416
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Update(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977432
+}
+,
+{
+"cat":"function",
+"dur":15,
+"name":"int __cdecl ScrewSandbox::Sandbox::Output(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977448
+}
+,
+{
+"cat":"function",
+"dur":63,
+"name":"void __cdecl ScrewSandbox::Sandbox::RunLoop(void)",
+"ph":"X",
+"pid":49592,
+"tid":12489421904971673037,
+"ts":25977400
+}
+]}

@@ -1,13 +1,13 @@
 #pragma once
 
-#define SCREW_EXTEND_SLASH "------------------"
-#define SCREW_EXTEND_SLASH_TILTE_PATTERN "{0}{1} START--[{2:.2f}{3}]{0}"
-#define SCREW_EXTEND_SLASH_FOOTER_PATTERN "{0}{1} END----[{2:.2f}{3}]{0}"
+#define SE_PRINT_FORMAT_DASH "------------------"
+#define SE_PRINT_TILTE_PATTERN "{0}{1} START--[{2:.2f}{3}]{0}"
+#define SE_PRINT_FOOTER_PATTERN "{0}{1} END----[{2:.2f}{3}]{0}"
 
 #ifdef SCREW_EXTEND_DEBUG_DETAIL
-#define SCREW_EXTEND_DEBUG_FUNCTION_DETAIL true
+#define SE_DEBUG_FUNCTION_DETAIL_OUT __FUNCSIG__
 #else
-#define SCREW_EXTEND_DEBUG_FUNCTION_DETAIL false
+#define SE_DEBUG_FUNCTION_DETAIL_OUT __FUNCTION__
 #endif
 
 #define SCREW_EXTEND_DEBUG_FUNCTION_TYPE_DEFAULT "-NoFuntionRecord-"

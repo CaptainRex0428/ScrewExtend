@@ -4,6 +4,9 @@
 #include "Directory/Directory.h"
 #include "File/File.h"
 
+#include "Message/Message.h"
+#include "Message/Message_Micro.h"
+
 #include "Clock/Clock.h"
 
 #include <format>
@@ -17,19 +20,15 @@
 namespace ScrewExtend
 {
 	Trace::Trace()
-		:m_ProfileCount(0)
+		:m_ProfileCount(0), m_isRecording(false),m_traceFile(nullptr)
 	{
-		if(!Directory::isDirectoryPathValid(SCREW_EXTEND_TRACE_FOLDER,false))
-		{
-			Directory::Create(SCREW_EXTEND_TRACE_FOLDER, true);
-		}
 	}
 
 	Trace::~Trace()
 	{
-		if (m_fstream.is_open() || m_fstreamSession != nullptr)
+		if(m_isRecording)
 		{
-			EndSession();
+			Stop();
 		}
 	}
 
@@ -41,7 +40,7 @@ namespace ScrewExtend
 
 	void Trace::BeginSession()
 	{
-		if (!m_fstream.is_open() || m_fstreamSession == nullptr)
+		if (!m_isRecording)
 		{
 			char* filename = new char();
 			Clock::GetCurrentTime_sys_simple(filename);
@@ -49,56 +48,77 @@ namespace ScrewExtend
 			long long highres = 0;
 			Clock::GetCurrentTime_sys(highres);
 
-			std::filesystem::path filepath(std::format("{0}/{1}-{2}.json", SCREW_EXTEND_TRACE_FOLDER, filename,highres));
+			std::string _path = std::format("{0}/{1}-{2}.json", SCREW_EXTEND_TRACE_FOLDER, filename, highres);
+			
+			m_traceFile = new File(_path);
 
-			if (Open(filepath.string().c_str(), true) == 0)
+			if (m_traceFile->Open(true) == 0)
 			{
+				SE_MESSAGE_TERMINAL_DEBUG("Trace Started.");
+				m_isRecording = true;
+
 				WriteHeader();
+				
+				return;
 			}
+
+			m_traceFile->Close();
+			delete m_traceFile;
+			m_traceFile = nullptr;
 		}
 	}
 
 	void Trace::EndSession()
 	{
-		if (m_fstreamSession != nullptr)
+		if (m_isRecording) 
 		{
 			WriteFooter();
-			m_fstream.close();
-			delete m_fstreamSession;
-			m_fstreamSession = nullptr;
+
+			m_traceFile->Close();
+			delete m_traceFile;
+			m_traceFile = nullptr;
+
+			m_isRecording = false;
 		}
 	}
 
 	void Trace::WriteProfile(const ProfileResult& result)
 	{
+		if (!m_isRecording)
+		{
+			return;
+		}
+
 		if (m_ProfileCount++ > 0)
-			m_fstream << ",";
+			m_traceFile->Write(",");
 
 		std::string name = result.RecordName;
 		std::replace(name.begin(), name.end(), '"', '\'');
 
-		m_fstream << "{\n";
-		m_fstream << "\"cat\":\"function\",\n";
-		m_fstream << "\"dur\":" << (result.End - result.Start) << ",\n";
-		m_fstream << "\"name\":\"" << name << "\",\n";
-		m_fstream << "\"ph\":\"X\",\n";
-		m_fstream << "\"pid\":" << _getpid() << ",\n";
-		m_fstream << "\"tid\":" << result.ThreadID << ",\n";
-		m_fstream << "\"ts\":" << result.Start;
-		m_fstream << "}";
-
-		m_fstream.flush();
+		m_traceFile->Write("{");
+		m_traceFile->Write("\"cat\":\"function\",");
+		m_traceFile->Write(std::format("\"dur\":{0},", std::to_string(result.End - result.Start)));
+		m_traceFile->Write(std::format("\"name\":\"{0}\",", name));
+		m_traceFile->Write("\"ph\":\"X\",");
+		m_traceFile->Write(std::format("\"pid\":{0},",std::to_string(_getpid())));
+		m_traceFile->Write(std::format("\"tid\":{0},", std::to_string(result.ThreadID)));
+		m_traceFile->Write(std::format("\"ts\":{0}", std::to_string(result.Start)));
+		m_traceFile->Write("}");
 	}
 
 	void Trace::WriteHeader()
 	{
-		m_fstream << "{\"otherData\": {},\"traceEvents\":[\n";
-		m_fstream.flush();
+		if (m_isRecording) 
+		{
+			m_traceFile->Write(R"({"otherData": {},"traceEvents":[)");
+		}
 	}
 
 	void Trace::WriteFooter() {
-		m_fstream << R"(]})";
-		m_fstream.flush();
+		if (m_isRecording) 
+		{
+			m_traceFile->Write(R"(]})");
+		}
 	}
 
 	void Trace::Start()
@@ -113,11 +133,9 @@ namespace ScrewExtend
 
 	void Trace::Record(const ProfileResult& result)
 	{
-		if (Get().m_fstreamSession != nullptr && Get().m_fstream.is_open())
+		if (Get().m_isRecording)
 		{
 			Get().WriteProfile(result);
 		}
 	}
-
-
 }

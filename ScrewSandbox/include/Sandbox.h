@@ -25,5 +25,6 @@ namespace ScrewSandbox
 
 	private:
 		bool m_isRunning;
+		ScrewExtend::File * m_f;
 	};
 }
