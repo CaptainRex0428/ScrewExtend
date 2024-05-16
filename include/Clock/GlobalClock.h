@@ -12,8 +12,7 @@ namespace ScrewExtend
 
 		SE_API static int Init();
 
-		SE_API static const tm * GetProcessStartTime();
-		SE_API static const CHRONO_HIGHRES_CLOCK::time_point * GetProcessStartTime_HIGHRES();
+		SE_API static const ClockProfile * GetProcessStartTime();
 
 	protected:
 		SE_API virtual int Initialize();
@@ -27,8 +26,7 @@ namespace ScrewExtend
 	private:
 		bool m_initialized;
 
-		tm* m_processStartTime;
-		CHRONO_HIGHRES_CLOCK::time_point* m_processStartTime_HIGHRES;
+		ClockProfile * m_processStartTime;
 
 	};
 }

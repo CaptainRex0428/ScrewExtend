@@ -10,7 +10,7 @@
 
 namespace ScrewExtend
 {
-	struct ProfileResult
+	struct TraceProfile
 	{
 		std::string RecordName;
 		long long Start, End;
@@ -24,7 +24,7 @@ namespace ScrewExtend
 
 		SE_API static void Start();
 		SE_API static void Stop();
-		SE_API static void Record(const ProfileResult& result);
+		SE_API static void Record(const TraceProfile& result);
 
 	private:
 
@@ -35,7 +35,7 @@ namespace ScrewExtend
 
 		SE_API void BeginSession();
 		SE_API void EndSession();
-		SE_API void WriteProfile(const ProfileResult& result);
+		SE_API void WriteProfile(const TraceProfile& result);
 		SE_API void WriteHeader();
 		SE_API void WriteFooter();
 

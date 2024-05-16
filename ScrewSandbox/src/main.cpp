@@ -7,4 +7,6 @@ int main(int argc, char * argv[])
 		ScrewSandbox::Sandbox::RunLoop();
 		ScrewSandbox::Sandbox::ShutDown();
 	}
+
+	auto time = ScrewExtend::GlobalClock::GetProcessStartTime();
 }

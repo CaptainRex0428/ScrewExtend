@@ -44,7 +44,7 @@ namespace ScrewSandbox
 
 	void Sandbox::RunLoop()
 	{
-		// ScrewExtend::Trace::Start();
+		ScrewExtend::Trace::Start();
 
 		double loopFrame = 0;
 

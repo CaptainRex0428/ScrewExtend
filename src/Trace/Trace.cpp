@@ -38,16 +38,9 @@ namespace ScrewExtend
 	{
 		if (!m_isRecording)
 		{
-			auto _time = Clock::GetCurrentTime_sys();
+			auto _time = Clock::GetCurrentTime_sys_profile(SE_TIME_STRING_PATTERN_FILE);
 			size_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());
-
-			std::string filename = std::format("{0}{1}{2}{3}{4}-{5}", 
-												_time->tm_year,
-												_time->tm_mon,
-												_time->tm_hour,
-												_time->tm_min,
-												_time->tm_sec,
-												threadID);
+			std::string filename = std::format("{0}-{1}", _time.m_time_str,threadID);
 
 			std::string _path = std::format("{0}/{1}.json", SE_TRACE_FOLDER, filename);
 			
@@ -82,7 +75,7 @@ namespace ScrewExtend
 		}
 	}
 
-	void Trace::WriteProfile(const ProfileResult& result)
+	void Trace::WriteProfile(const TraceProfile& result)
 	{
 		if (!m_isRecording)
 		{
@@ -131,7 +124,7 @@ namespace ScrewExtend
 		Get().EndSession();
 	}
 
-	void Trace::Record(const ProfileResult& result)
+	void Trace::Record(const TraceProfile& result)
 	{
 		if (Get().m_isRecording)
 		{

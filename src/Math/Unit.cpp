@@ -10,7 +10,7 @@ double ScrewExtend::ByteSizeTo(int bytesize, SystemSizeUnit unit)
 
 std::tuple<const char*, double> ScrewExtend::ByteSizeConvert(uintmax_t bytesize)
 {
-	double size = bytesize;
+	double size = (double)bytesize;
 	const char* unit = "Byte";
 
 	// to KB

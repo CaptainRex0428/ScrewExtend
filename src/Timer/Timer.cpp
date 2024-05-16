@@ -33,7 +33,7 @@ namespace ScrewExtend {
 			long long end = m_DestructedTime.time_since_epoch().count() / 1000000;
 			size_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());
 
-			ScrewExtend::ProfileResult result{m_obj,start,end,threadID};
+			ScrewExtend::TraceProfile result{m_obj,start,end,threadID};
 			
 			Trace::Record(result);
 		}

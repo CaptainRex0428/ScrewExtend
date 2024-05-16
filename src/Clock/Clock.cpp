@@ -3,7 +3,6 @@
 //
 
 #include "Clock/Clock.h"
-#include "Clock/Clock_Config.h"
 
 #include "Message/Message.h"
 #include "SE_Config.h"
@@ -37,9 +36,33 @@ namespace ScrewExtend {
 		return localtime(&time);
 	}
 
+	const ClockProfile Clock::GetCurrentTime_sys_profile(const char * _timepattern)
+	{
+		const tm* s_time = GetCurrentTime_sys();
+		
+		char s_time_str[SE_MAX_TIME_STRING_SIZE];
+		strftime(s_time_str, SE_MAX_TIME_STRING_SIZE, _timepattern, s_time);
+
+		CHRONO_STEADY_CLOCK::time_point s_time_point = GetCurrentTime_HighRes();
+		
+		return {s_time,s_time_str, s_time_point};
+	}
+
 	const tm* Clock::GetCurrentTime_gm() {
 		auto time = GetCurrentTime_time_t();
 		return gmtime(&time);
+	}
+
+	const ClockProfile Clock::GetCurrentTime_gm_profile(const char* _timepattern)
+	{
+		const tm* s_time = GetCurrentTime_gm();
+
+		char s_time_str[SE_MAX_TIME_STRING_SIZE];
+		strftime(s_time_str, SE_MAX_TIME_STRING_SIZE, _timepattern, s_time);
+
+		CHRONO_STEADY_CLOCK::time_point s_time_point = GetCurrentTime_HighRes();
+
+		return { s_time,s_time_str, s_time_point };
 	}
 
 	const std::chrono::steady_clock::time_point Clock::GetCurrentTime_HighRes()

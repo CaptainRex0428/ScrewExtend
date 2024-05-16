@@ -145,15 +145,8 @@ namespace ScrewExtend {
 	int File::OpenWriteStream()
 	{
 		std::string _Path = GetFullPath();
-		
-		// SE_THREAD_DELAY_MICRO(SE_FILECREATE_DELAY_MICRO);
-		// Problem is here
-
-		SE_MESSAGE_TERMINAL_CRITICAL("Start Point.[{}]",__FUNCTION__);
-
 
 		m_ofstream = new std::ofstream(_Path.c_str(), std::ios_base::out | std::ios_base::app, _SH_DENYNO);
-		SE_MESSAGE_TERMINAL_CRITICAL("End StartPoint[{}]", __FUNCTION__);
 
 		return m_ofstream->is_open() ? 0 : -1;
 	}

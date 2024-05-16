@@ -2,7 +2,7 @@
 
 namespace ScrewExtend{
 	GlobalClock::GlobalClock()
-		:m_initialized(false),m_processStartTime(nullptr),m_processStartTime_HIGHRES(nullptr)
+		:m_initialized(false),m_processStartTime(nullptr)
 	{
 	}
 
@@ -10,17 +10,13 @@ namespace ScrewExtend{
 	{
 		delete m_processStartTime;
 		m_processStartTime = nullptr;
-
-		delete m_processStartTime_HIGHRES;
-		m_processStartTime_HIGHRES = nullptr;
 	}
 
 	int GlobalClock::Initialize()
 	{
 		if(!m_initialized)
 		{
-			m_processStartTime_HIGHRES = new CHRONO_HIGHRES_CLOCK::time_point(GetCurrentTime_HighRes());
-			m_processStartTime = new tm(*GetCurrentTime_sys());
+			m_processStartTime = new ClockProfile(GetCurrentTime_sys_profile());
 			m_initialized = true;
 		}
 		
@@ -38,13 +34,8 @@ namespace ScrewExtend{
 		return Get().Initialize();
 	}
 	
-	const tm* GlobalClock::GetProcessStartTime()
+	const ClockProfile * GlobalClock::GetProcessStartTime()
 	{
 		return Get().m_processStartTime;
-	}
-	
-	const CHRONO_HIGHRES_CLOCK::time_point* GlobalClock::GetProcessStartTime_HIGHRES()
-	{
-		return Get().m_processStartTime_HIGHRES;
 	}
 }
