@@ -294,7 +294,10 @@ namespace ScrewExtend {
 
 	std::string File::GetFullPath()
 	{
-		return std::format("{0}/{1}", m_filefolder, m_filename);
+		if (!m_filename.empty() && !m_filefolder.empty())
+			return std::format("{0}/{1}", m_filefolder, m_filename);
+
+		return "";
 	}
 
 }

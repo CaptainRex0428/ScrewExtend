@@ -40,6 +40,7 @@ namespace ScrewExtend
 		SE_API std::string GetFullPath();
 		SE_API std::vector<std::string> GetContent();
 		SE_API uintmax_t GetFileByteSize();
+
 	protected:
 		SE_API virtual int OpenWriteStream();
 		SE_API virtual int OpenReadStream();

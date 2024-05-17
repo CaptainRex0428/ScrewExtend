@@ -8,6 +8,7 @@
 #include "Directory/Directory.h"
 #include "Timer/Timer.h"
 #include "Trace/Trace.h"
+#include "Log/Log.h"
 //---------------------------------------------
 
 //----------------- Micro Define --------------
@@ -20,6 +21,7 @@
 #include "Math/Math_Micro.h"
 #include "Timer/Timer_Micro.h"
 #include "Trace/Trace_Micro.h"
+#include "Log/Log_Micro.h"
 //---------------------------------------------
 
 namespace ScrewExtend

@@ -40,4 +40,12 @@ int main(int argc, char* argv[])
 	file.Close();
 
 	std::cin.get();
+
+	ScrewExtend::Log Logfile1("Terminal", "./Log/Default.log");
+	ScrewExtend::Log Logfile2("Client", "./Log/Default.log");
+
+	Logfile1.Write("Test Log01",ScrewExtend::LogLevel::Trace);
+	Logfile2.Write("Test Log01",ScrewExtend::LogLevel::Trace);
+	Logfile1.Write("Test Log02",ScrewExtend::LogLevel::Trace);
+	Logfile2.Write("Test Log02",ScrewExtend::LogLevel::Trace);
 }
