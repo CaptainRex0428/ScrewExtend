@@ -8,3 +8,5 @@
 #define SE_CNAME(value) (#value)
 
 #define SE_THREAD_DELAY_MICRO(value) std::this_thread::sleep_for(std::chrono::microseconds(value))
+
+#define SE_BIT(value) (1 << value)
