@@ -9,6 +9,8 @@
 #include "Timer/Timer.h"
 #include "Trace/Trace.h"
 #include "Log/Log.h"
+
+#include "SE_Debug.h"
 //---------------------------------------------
 
 //----------------- Micro Define --------------

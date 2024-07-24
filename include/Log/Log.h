@@ -28,9 +28,9 @@ namespace ScrewExtend
 		SE_API int SetTag(std::string _tag);
 	
 		SE_API virtual bool Write(std::string Content, LogLevel _level);
+		SE_API virtual bool Write(std::string Content) override;
 
 	protected:
-		SE_API virtual bool Write(std::string Content) override;
 		SE_API virtual void Clear() override;
 
 	protected:

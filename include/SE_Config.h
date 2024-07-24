@@ -15,3 +15,4 @@
 #define SE_TIP_FUNCTION_FORCE "Make parameter input <{0}> as <{1}> may help."
 #define SE_TIP_VARIABLE_RESET "Variable <{0}> has been reset."
 
+#define SE_DEFAULT_LOG_PATH_REL "./log/Default.log"

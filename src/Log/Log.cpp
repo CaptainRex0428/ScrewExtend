@@ -1,15 +1,18 @@
 #include "Log/Log.h"
+#include "SE_Config.h"
 
 namespace ScrewExtend
 {
 	Log::Log()
-		:m_Tag("")
+		:m_Tag("CustomLog"),File(SE_DEFAULT_LOG_PATH_REL)
 	{
+		Open(true);
 	}
 
 	Log::Log(std::string _tag)
-		:m_Tag(_tag)
+		:m_Tag(_tag),File(SE_DEFAULT_LOG_PATH_REL)
 	{
+		Open(true);
 	}
 
 	Log::Log(std::string _tag,std::string filepath)
@@ -73,10 +76,11 @@ namespace ScrewExtend
 	}
 
 	bool Log::Write(std::string Content)
-	{
-		return false;
+	{	
+		return Write(Content, ScrewExtend::Trace);
 	}
-	SE_API void Log::Clear()
+
+	void Log::Clear()
 	{
 		return;
 	}

@@ -54,6 +54,10 @@ private:
 int main()
 {
 	ScrewExtend::Message::Init();
+
+	ScrewExtend::MsgLog("MsgLogTestCritical",ScrewExtend::Critical);
+	ScrewExtend::MsgLog("MsgLogTestWarning",ScrewExtend::Warning);
+	
 	Entity::Init("./Template02/Template02");
 
 	Entity::write("Template02 test line.");
