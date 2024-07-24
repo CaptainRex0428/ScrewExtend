@@ -44,3 +44,5 @@ autom4te*
 !Scripts/premake
 
 example_assert_log.txt
+
+settings/trace/*.json
